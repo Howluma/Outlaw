@@ -16,6 +16,7 @@ Paper's damage API exposes damage sources and primed TNT source attribution. The
 - Optional Toughness: multiply raw incoming damage for players carrying Toughness by 0.975. **Off by default** because the original 95% non-player reduction must be disabled in the vendor's config first.
 - Optional Sharpshooter: increase crossbow-shot projectile velocity; initial configurable multiplier 1.25. **Off by default** until the original 50% crossbow bonus is disabled.
 - Optional Swift prototype: intercept a 10-second, plugin-applied Speed II effect while Swift is selected, replace it with a temporary +40% movement speed attribute modifier, and clean up on expiry, death, logout, and plugin shutdown. **Off by default** until live event-order tests succeed. Haste II is untouched.
+- Optional Blacksmith recipes: source-owned 1 COBWEB -> 2 COBWEBs and stick + 8 iron nuggets -> 1 BREEZE_ROD, restricted at both crafting preview and crafting completion to players equipped with Blacksmith. **Off by default** until tested with the original recipe manager. The original four-gold apple recipe is already correct and remains in the vendor's config.
 - /outlawexpansion status shows whether PlaceholderAPI is resolving a player's equipped abilities/perks.
 - /outlawexpansion reload reloads the companion's own config.
 
@@ -45,6 +46,10 @@ The uploaded backup contains **17** player records under `data.yml`, **18** shop
 On a backed-up **stopped** test server, rename `plugins/OutlawSMP/config.yml` to `config.old.yml`, restart and check whether the vendor regenerates the bundled default. Leave `data.yml`, `sheriff.yml`, and `shopkeepers.yml` alone. Your license might need to be restored using the vendor's authorized license process. The vendor's `config-version` is part of its migration logic; do not invent a new version.
 
 See `docs/ARCHIVE_AUDIT.md` and `docs/IMPLEMENTATION_ROADMAP.md` before migrating economy data.
+
+## Blacksmith recipe test
+
+Set `perks.blacksmith.new-recipes-enabled: true` in `plugins/OutlawExpansion/config.yml` on a **test server** and use `/outlawexpansion reload`. Test one Blacksmith and one non-Blacksmith. The separate `OUTLAWSMP_CONFIG_PATCH.yml` offers a vendor-config-only alternative; **do not enable both vendor and addon copies of the new recipes at once** until you confirm the recipe order. The four-gold apple recipe is already present in the original config.
 
 ## What is not yet safe to implement as an addon
 
