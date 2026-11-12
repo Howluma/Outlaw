@@ -44,6 +44,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
     private Method placeholderMethod;
     private CatalogManager catalog;
     private ShopInspector inspector;
+    private BlacksmithRecipeManager blacksmithRecipes;
     private NamespacedKey swiftModifierKey;
     private final Map<UUID, Integer> swiftGenerations = new HashMap<>();
     private int swiftGeneration;
@@ -53,6 +54,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         saveDefaultConfig();
         catalog = new CatalogManager(this);
         inspector = new ShopInspector(this);
+        blacksmithRecipes = new BlacksmithRecipeManager(this);
         swiftModifierKey = new NamespacedKey(this, "swift_speed_ii");
         Plugin vendor = Bukkit.getPluginManager().getPlugin("OutlawSMP");
         if (vendor == null || !vendor.isEnabled()) {
@@ -73,11 +75,14 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         }
         Bukkit.getPluginManager().registerEvents(this, this);
         Bukkit.getPluginManager().registerEvents(inspector, this);
+        Bukkit.getPluginManager().registerEvents(blacksmithRecipes, this);
+        blacksmithRecipes.reload();
         Objects.requireNonNull(getCommand("outlawexpansion")).setExecutor(this);
     }
 
     @Override
     public void onDisable() {
+        if (blacksmithRecipes != null) blacksmithRecipes.unregister();
         for (Player player : Bukkit.getOnlinePlayers()) {
             removeSwiftModifier(player);
         }
@@ -214,7 +219,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         projectile.setVelocity(projectile.getVelocity().multiply(multiplier));
     }
 
-    private boolean hasPerk(Player player, String perkName) {
+    boolean hasPerk(Player player, String perkName) {
         return matchesPerk(resolvePlaceholder(player, "%outlawsmp_perk1%"), perkName)
                 || matchesPerk(resolvePlaceholder(player, "%outlawsmp_perk2%"), perkName);
     }
@@ -249,6 +254,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         if (args.length == 1 && args[0].equalsIgnoreCase("reload")) {
             reloadConfig();
             catalog.reload();
+            blacksmithRecipes.reload();
             sender.sendMessage(ChatColor.GREEN + "OutlawExpansion config and draft catalog reloaded.");
             return true;
         }
@@ -310,6 +316,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
             sender.sendMessage("Toughness addon: " + getConfig().getBoolean("perks.toughness.enabled", false));
             sender.sendMessage("Sharpshooter addon: " + getConfig().getBoolean("perks.sharpshooter.enabled", false));
             sender.sendMessage("Swift attribute addon: " + getConfig().getBoolean("skills.swift.enabled", false));
+            sender.sendMessage("Blacksmith addon recipes: " + getConfig().getBoolean("perks.blacksmith.new-recipes-enabled", false));
             sender.sendMessage("Draft catalog entries: " + catalog.count("skills") + " skills, "
                     + catalog.count("perks") + " perks (preview only)");
             if (sender instanceof Player player) {
