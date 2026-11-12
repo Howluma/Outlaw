@@ -32,6 +32,12 @@ perks:
 # Optional Swift replacement, disabled until validated with the vendor's
 # /abilityuse event order. Only replaces a 10s PLUGIN-applied Speed II effect.
 skills:
+  lifestealer:
+    # Experimental: cancel vendor Regeneration I gained on a Lifestealer hit
+    # and heal for actual health lost by victim after damage mitigation.
+    # Requires exact event-order confirmation on a test server.
+    convert-regeneration: false
+    vendor-regen-ticks: 60
   tank:
     # Experimental: re-enable player's own wind-charge knockback when Tank selected.
     # Not guaranteed against a different plugin cancelling after this handler.
