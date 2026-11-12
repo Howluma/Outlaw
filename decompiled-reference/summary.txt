@@ -1,0 +1,1060 @@
+Summary for OutlawSMP.jar
+Decompiled with CFR 0.152
+
+
+Lusik21556.IiiIlliiIl.iiiIlIIIll.lIIlliIIll.IlIllllIll.IlIlllIlilIl
+----------------------------
+
+IiIlliIliiIl()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [26[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+iliIiiliiiii(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+IIIllIIliIIl(int int int java.lang.String java.lang.String java.lang.String int int java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+lIiiIiIlilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [9[CASE]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.IIlilIliiIli
+----------------------------
+
+Iiilliiliiil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [64[UNCONDITIONALDOLOOP]], but top level block is 2[TRYBLOCK]
+IlIillIiilIi(int java.lang.String int java.lang.String int java.lang.String java.lang.String java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK], 1[TRYBLOCK]], but top level block is 15[SWITCH]
+Ililllililil(java.lang.String )
+  Unable to fully structure code
+IiIiliIiiiIi(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+
+
+Lusik21556.IlIillIiilIi.IiIiliIiiiIi.IIlilIliiIli.Illillliilli.Iilililiiili.IIiilIiiiIii.IlIlllIlilIl
+----------------------------
+
+lIiiIiIlilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [46[UNCONDITIONALDOLOOP], 15[CASE]], but top level block is 1[TRYBLOCK]
+IIIllIIliIIl(java.lang.String int java.lang.String int int java.lang.String java.lang.String java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AnonBreakTarget
+iliIiiliiiii(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+
+
+Lusik21556.lIlIliIlIl.IllIllllIl.illIlIilIl.lilIliilIl.IIiIllIiIl.iIiIlIliIl.IIIllIIliIIl
+----------------------------
+
+IIlilIliiIli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Illillliilli(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+IiIiliIiiiIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [11[CASE], 31[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Iilililiiili(java.lang.String java.lang.String int java.lang.String int int java.lang.String int java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK], 1[TRYBLOCK]], but top level block is 15[SWITCH]
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.Illlllllilll
+----------------------------
+
+lIiiIiIlilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [16[CASE]], but top level block is 0[TRYBLOCK]
+IIIllIIliIIl(java.lang.String int java.lang.String int java.lang.String java.lang.String int int int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [2[TRYBLOCK], 3[TRYBLOCK], 4[TRYBLOCK]], but top level block is 26[SWITCH]
+IlIlllIlilIl(java.lang.String int int )
+  Unable to fully structure code
+iliIiiliiiii(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+IilliliilIIi(java.lang.String )
+  Unable to fully structure code
+
+
+Lusik21556.IIIllIIliIIl.IlIlllIlilIl.IiIlliIliiIl.IIlllIlliIll.liiiIIllIl
+----------------------------
+
+IiiIlliiIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+liIlliiIll()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [70[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IlIllllIll(java.lang.String java.lang.String int int java.lang.String int int java.lang.String int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [39[DOLOOP]], but top level block is 0[TRYBLOCK]
+ilIllIiIll(java.lang.String int int )
+  Unable to fully structure code
+iiiIlIIIll(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+
+
+Lusik21556.IIIllIIliIIl.IlIlllIlilIl.IiIlliIliiIl.IIlllIlliIll.iliIiiliiiii
+----------------------------
+
+Iiilliiliiil(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+IiIiliIiiiIi()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [38[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIillIiliIil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [13[CASE], 30[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IlIillIiilIi(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IIIilIIiiIIi(int java.lang.String java.lang.String int int int int java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [38[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Ililllililil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.IIIilIIiiIIi
+----------------------------
+
+lIiiIiIlilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [69[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIIllIIliIIl(int java.lang.String int java.lang.String int int java.lang.String int java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+IlIlllIlilIl(java.lang.String int int )
+  Unable to fully structure code
+IiIlliIliiIl()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [23[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+iliIiiliiiii(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+
+
+Lusik21556.IlIillIiilIi.IiIiliIiiiIi.IIlilIliiIli.Illillliilli.Iilililiiili.IIiilIiiiIii.lIiiIiIlilli
+----------------------------
+
+IiIiliIiiiIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [60[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+IlIillIiilIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [36[UNCONDITIONALDOLOOP], 35[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Illillliilli(java.lang.String int java.lang.String int int java.lang.String int int java.lang.String java.lang.String )
+  Unable to fully structure code
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.IiIiliIiiiIi
+----------------------------
+
+IIlllIlliIll(java.lang.String int java.lang.String int java.lang.String java.lang.String int java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [43[DOLOOP], 44[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+IIIllIIliIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Iilllilliill()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [31[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IlIlllIlilIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [24[CASE], 58[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+
+
+Lusik21556.llIIlilIIl.IiIIlliIIl.iiIIlIIlIl.iIlIlllllill
+----------------------------
+
+IIIilIIiiIIi(java.lang.String int int java.lang.String java.lang.String java.lang.String int int java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Back jump on a try block [egrp 4[TRYBLOCK] [0 : 556->872)] java.lang.Exception
+Ililllililil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IIillIiliIil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [8[CASE]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.IlIillIiilIi.IiIiliIiiiIi.IIlilIliiIli.Illillliilli.Iilililiiili.IIiilIiiiIii.iIlIlllllill
+----------------------------
+
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+iIlIlllllill(java.lang.String )
+  Unable to fully structure code
+IlIlllIlilIl()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [5[CASE]], but top level block is 0[TRYBLOCK]
+lIiiIiIlilli(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+iliIiiliiiii(int java.lang.String int int java.lang.String int int int java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+
+
+Lusik21556.lIilliIill.Ilillllill.ilillIiill.liilliiill.IIIillIIil.iIIilIlIil.iliIiiliiiii
+----------------------------
+
+IIlllIlliIll(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+<clinit>()
+  Handled impossible loop by adding 'first' condition
+Illlllllilll(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IIillIiliIil(int java.lang.String java.lang.String java.lang.String java.lang.String int int int java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Iilllilliill(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+IlIlllIlilIl(java.lang.Object[] )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.IIlllIlliIll
+----------------------------
+
+iliIiiliiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [34[UNCONDITIONALDOLOOP], 10[CASE]], but top level block is 0[TRYBLOCK]
+IiIlliIliiIl(java.lang.String java.lang.String int int int java.lang.String java.lang.String java.lang.String java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Illlllllilll()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [39[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIIllIIliIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [22[CASE]], but top level block is 0[TRYBLOCK]
+IIlllIlliIll(java.lang.String int int )
+  Handled impossible loop by adding 'first' condition
+
+
+Lusik21556.Iiiilliiil.liiiIIllIl
+----------------------------
+
+iliIiiliiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+IiIlliIliiIl(int java.lang.String java.lang.String java.lang.String int java.lang.String int int java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [47[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+IIIllIIliIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [18[CASE]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.IiiIlliiIl.iiiIlIIIll.lIIlliIIll.IlIllllIll.iIlIlllllill
+----------------------------
+
+IIillIiliIil()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [40[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IlIlllIlilIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+Illlllllilll(java.lang.String java.lang.String java.lang.String int int int java.lang.String int java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [39[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+IiIlliIliiIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.Iilllilliill
+----------------------------
+
+IlIlllIlilIl(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+iliIiiliiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [37[UNCONDITIONALDOLOOP], 15[CASE]], but top level block is 2[TRYBLOCK]
+IIIllIIliIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [64[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Illlllllilll()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [34[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IiIlliIliiIl(int java.lang.String int int int java.lang.String java.lang.String java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [3[TRYBLOCK], 2[TRYBLOCK], 4[TRYBLOCK]], but top level block is 19[SWITCH]
+
+
+Lusik21556.IIIllIIliIIl.IlIlllIlilIl.IiIlliIliiIl.IIlllIlliIll.IliIlllilIi
+----------------------------
+
+Iiiiliiiiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [18[CASE]], but top level block is 0[TRYBLOCK]
+iIIIlIlIIl(int int java.lang.String java.lang.String int int java.lang.String int java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [17[CASE]], but top level block is 1[TRYBLOCK]
+IiIIlliIIl()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [56[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Iliilliiilii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+llIIlilIIl(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.IlIillIiilIi
+----------------------------
+
+iIIIlIlIIl(java.lang.String int java.lang.String int int java.lang.String java.lang.String java.lang.String int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+Iiiiliiiiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Iliilliiilii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [33[UNCONDITIONALDOLOOP], 12[CASE]], but top level block is 1[TRYBLOCK]
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.IlIlllIlilIl
+----------------------------
+
+IlIlllIlilIl(java.lang.String int int )
+  Unable to fully structure code
+IiIlliIliiIl()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [29[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIIllIIliIIl(java.lang.String java.lang.String java.lang.String int java.lang.String int int int java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [37[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [35[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+lIiiIiIlilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [59[DOLOOP]], but top level block is 0[TRYBLOCK]
+iliIiiliiiii(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.IIillIiliIil
+----------------------------
+
+Illlllllilll(int java.lang.String int java.lang.String java.lang.String int int java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [39[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+Iilllilliill(java.lang.String int int )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+IIillIiliIil()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 11[CASE]
+IiIlliIliiIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IlIlllIlilIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+
+
+Lusik21556.lllllillll.Iillllilll.iilllIIill.IliIlllilIi
+----------------------------
+
+IlIlllIlilIl(java.lang.String java.lang.String java.lang.String java.lang.String int java.lang.String java.lang.String int int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+iliIiiliiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IiIlliIliiIl(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IIlllIlliIll()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [31[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+lIiiIiIlilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [10[CASE]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.IIIllIIliIIl.IlIlllIlilIl.IiIlliIliiIl.IIlllIlliIll.IilliliilIIi
+----------------------------
+
+Ililllililil(int int int java.lang.String java.lang.String java.lang.String java.lang.String int java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Iilllilliill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [17[CASE]], but top level block is 0[TRYBLOCK]
+IIIilIIiiIIi()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [33[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Illlllllilll(java.lang.String )
+  Unable to fully structure code
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.Ililllililil
+----------------------------
+
+IIillIiliIil(int int java.lang.String java.lang.String java.lang.String int java.lang.String int int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK], 1[TRYBLOCK]], but top level block is 14[SWITCH]
+Ililllililil(java.lang.String int int )
+  Unable to fully structure code
+IlIlllIlilIl(java.lang.Object[] )
+  Unable to fully structure code
+Illlllllilll(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+<clinit>()
+  Handled impossible loop by adding 'first' condition
+IIlllIlliIll(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [11[CASE]], but top level block is 0[TRYBLOCK]
+Iilllilliill(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+
+
+Lusik21556.llIIlilIIl.IiIIlliIIl.iiIIlIIlIl.liiiIIllIl
+----------------------------
+
+Illillliilli()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [48[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IlIillIiilIi(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Handled impossible loop by adding 'first' condition
+IIlilIliiIli(java.lang.String int int )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+IIIilIIiiIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Iiilliiliiil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IiIiliIiiiIi(int java.lang.String int java.lang.String java.lang.String java.lang.String int java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [39[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.IIiilIiiiIii
+----------------------------
+
+IIIIllIIIl(java.lang.String )
+  Unable to fully structure code
+IiIIlliIIl(java.lang.String java.lang.String int java.lang.String int int java.lang.String int java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [41[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+iIIIlIlIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [16[CASE]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.illilIilil.lililiilil.IliIlllilIi
+----------------------------
+
+IIlllIlliIll(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [24[CASE], 59[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+IiIlliIliiIl(java.lang.String )
+  Unable to fully structure code
+IIIllIIliIIl(java.lang.Object[] )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [64[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Illlllllilll(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+Iilllilliill(int int int int java.lang.String java.lang.String java.lang.String java.lang.String int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [47[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Ililllililil()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [113[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+<clinit>()
+  Unable to fully structure code
+
+
+Lusik21556.llIIlilIIl.IiIIlliIIl.iiIIlIIlIl.lIiiIiIlilli
+----------------------------
+
+IIlilIliiIli(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [18[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+IIIilIIiiIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [23[CASE], 57[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Iiilliiliiil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IiIiliIiiiIi(int java.lang.String int int int int java.lang.String java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+Illillliilli()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [51[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IlIillIiilIi(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+
+
+Lusik21556.ilIllIiIll.liIlliiIll.IIllllIlll.iIlllIllll.IilliliilIIi
+----------------------------
+
+IlIillIiilIi()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [27[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Iilllilliill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [12[CASE]], but top level block is 0[TRYBLOCK]
+Ililllililil(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+IIillIiliIil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [60[UNCONDITIONALDOLOOP]], but top level block is 2[TRYBLOCK]
+Iiilliiliiil(int int int java.lang.String java.lang.String int java.lang.String java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+
+
+Lusik21556.IIiillIiil.iIiilIliil.lliililiil.IliIlllilIi
+----------------------------
+
+IIlllIlliIll(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Ililllililil()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 11[CASE]
+Iilllilliill(java.lang.String int java.lang.String java.lang.String int java.lang.String java.lang.String java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [1[TRYBLOCK], 0[TRYBLOCK]], but top level block is 15[SWITCH]
+Illlllllilll(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+IiIlliIliiIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [11[CASE], 39[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.Illillliilli
+----------------------------
+
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IiIlliIliiIl()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 6[CASE]
+lIiiIiIlilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [2[TRYBLOCK]], but top level block is 16[SWITCH]
+IIIllIIliIIl(java.lang.String int java.lang.String java.lang.String int java.lang.String int java.lang.String int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [43[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.lllllillll.Iillllilll.iilllIIill.liiiIIllIl
+----------------------------
+
+Illlllllilll()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [26[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIIllIIliIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [4[TRYBLOCK]], but top level block is 16[SWITCH]
+IlIlllIlilIl(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+iliIiiliiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IiIlliIliiIl(java.lang.String int java.lang.String java.lang.String java.lang.String int java.lang.String int int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 5 blocks at once
+
+
+Lusik21556.lIilliIill.Ilillllill.ilillIiill.liilliiill.IIIillIIil.iIIilIlIil.lIiiIiIlilli
+----------------------------
+
+IilliliilIIi(java.lang.String )
+  Unable to fully structure code
+iIlIlllllill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [9[CASE]], but top level block is 0[TRYBLOCK]
+iliIiiliiiii(int java.lang.String java.lang.String java.lang.String java.lang.String java.lang.String int java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+
+
+Lusik21556.illilIilil.lililiilil.liiiIIllIl
+----------------------------
+
+IlIlllIlilIl()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [25[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIIllIIliIIl(java.lang.String int int )
+  Unable to fully structure code
+iIlIlllllill(java.lang.String )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [53[UNCONDITIONALDOLOOP], 18[CASE]], but top level block is 0[TRYBLOCK]
+lIiiIiIlilli(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+iliIiiliiiii(java.lang.String int java.lang.String java.lang.String java.lang.String int int int java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Back jump on a try block [egrp 6[TRYBLOCK] [0, 15 : 587->896)] java.lang.Exception
+<clinit>()
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+
+
+Lusik21556.IiiIlliiIl.iiiIlIIIll.lIIlliIIll.IlIllllIll.iliIiiliiiii
+----------------------------
+
+iIlIlllllill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [23[CASE]], but top level block is 0[TRYBLOCK]
+iliIiiliiiii(java.lang.String int int )
+  Unable to fully structure code
+lIiiIiIlilli(int int java.lang.String java.lang.String int int java.lang.String java.lang.String int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+IilliliilIIi(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Handled impossible loop by adding 'first' condition
+  Loose catch block
+liiiIIllIl(java.lang.String )
+  Unable to fully structure code
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.lIiiIiIlilli
+----------------------------
+
+IIlilIliiIli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [10[CASE]], but top level block is 0[TRYBLOCK]
+Iilililiiili(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Handled duff style switch with additional control
+  Unable to fully structure code
+Illillliilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Iliilliiilii(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IIiilIiiiIii(int java.lang.String java.lang.String int java.lang.String int int java.lang.String java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [40[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.Iliilliiilii
+----------------------------
+
+Iiiiliiiiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [57[UNCONDITIONALDOLOOP], 25[CASE]], but top level block is 1[TRYBLOCK]
+IiIIlliIIl()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [75[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+iIIIlIlIIl(java.lang.String java.lang.String int java.lang.String int java.lang.String java.lang.String int int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [39[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+Iliilliiilii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [11[CASE]], but top level block is 1[TRYBLOCK]
+
+
+Lusik21556.IiiIlliiIl.iiiIlIIIll.lIIlliIIll.IlIllllIll.lIiiIiIlilli
+----------------------------
+
+IIiilIiiiIii(java.lang.String int java.lang.String java.lang.String java.lang.String int int java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [2[TRYBLOCK], 3[TRYBLOCK], 4[TRYBLOCK]], but top level block is 29[SWITCH]
+Illillliilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [1[TRYBLOCK]], but top level block is 60[UNCONDITIONALDOLOOP]
+IIlilIliiIli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+Iilililiiili(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+Iiiiliiiiiii()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [48[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+
+
+me.lusik21556.outlawsmp.internal.PlayerData
+----------------------------
+
+<clinit>()
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+ex(int[] java.lang.Object[] java.lang.Throwable int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [34[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [55[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+conv(java.lang.Object java.lang.Class )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+IIIllIIliIIl(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IliIlllilIi(java.lang.Object[] )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [64[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+toInt(java.lang.Object )
+  Unable to fully structure code
+iliIiiliiiii(java.lang.String int java.lang.String java.lang.String java.lang.String int java.lang.String java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Back jump on a try block [egrp 4[TRYBLOCK] [0 : 432->720)] java.lang.Exception
+iIlIlllllill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+
+
+Lusik21556.lliIliliIl.liiiIIllIl
+----------------------------
+
+IIIilIIiiIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [48[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IiIiliIiiiIi(java.lang.String java.lang.String int int java.lang.String java.lang.String java.lang.String int int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [44[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+Iiilliiliiil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [13[CASE]], but top level block is 0[TRYBLOCK]
+IIlilIliiIli(java.lang.String int int )
+  Unable to fully structure code
+
+
+Lusik21556.iiiilIIIIi.lIIIiiIIIi.IlIIillIIi.IliIlllilIi
+----------------------------
+
+<clinit>()
+  Handled impossible loop by adding 'first' condition
+IlIillIiilIi()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [101[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIIilIIiiIIi(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [3[TRYBLOCK]], but top level block is 5[SWITCH]
+IIillIiliIil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [48[UNCONDITIONALDOLOOP]], but top level block is 49[UNCONDITIONALDOLOOP]
+IIlllIlliIll(java.lang.Object[] )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [61[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Iilllilliill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 8[SWITCH]
+Iiilliiliiil(int int java.lang.String int java.lang.String java.lang.String java.lang.String java.lang.String int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+
+
+Lusik21556.lliIliliIl.IliIlllilIi
+----------------------------
+
+iIIIlIlIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IiIIlliIIl(java.lang.String java.lang.String java.lang.String int int java.lang.String int java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+llIIlilIIl(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+IIIIllIIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [13[CASE], 33[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+
+
+Lusik21556.IIIllIIliIIl.IlIlllIlilIl.IiIlliIliiIl.IIlllIlliIll.IiIlliIliiIl
+----------------------------
+
+IlIillIiilIi(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [1[TRYBLOCK]], but top level block is 9[SWITCH]
+Ililllililil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+IIillIiliIil(java.lang.String )
+  Unable to fully structure code
+IIIilIIiiIIi(java.lang.String int int java.lang.String java.lang.String int java.lang.String int java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [17[CASE]], but top level block is 1[TRYBLOCK]
+IiIiliIiiiIi()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [30[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.lllllillll.Iillllilll.iilllIIill.iIlIlllllill
+----------------------------
+
+Iilllilliill(java.lang.String int int java.lang.String int java.lang.String java.lang.String int java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [39[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+Ililllililil()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [46[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIillIiliIil(java.lang.String int int )
+  Unable to fully structure code
+IIlllIlliIll(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IiIlliIliiIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [30[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.Iliilliiilii.Iiiiliiiiiii.IIIIllIIIl.iIIIlIlIIl.IliIlllilIi
+----------------------------
+
+IIillIiliIil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IlIillIiilIi()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IIIilIIiiIIi(java.lang.String int int )
+  Unable to fully structure code
+Iiilliiliiil(java.lang.String java.lang.String java.lang.String int int java.lang.String int java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [3[TRYBLOCK], 2[TRYBLOCK], 4[TRYBLOCK]], but top level block is 29[SWITCH]
+
+
+Lusik21556.IlIillIiilIi.IiIiliIiiiIi.IIlilIliiIli.Illillliilli.Iilililiiili.IIiilIiiiIii.IilliliilIIi
+----------------------------
+
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [16[CASE], 56[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+iIlIlllllill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [12[CASE], 33[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+IlIlllIlilIl()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [26[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+iliIiiliiiii(int java.lang.String int int int int java.lang.String java.lang.String java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK], 1[TRYBLOCK]], but top level block is 15[SWITCH]
+lIiiIiIlilli(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Handled impossible loop by adding 'first' condition
+
+
+Lusik21556.llIililIil.IiIilliIil.iiIilIIlil.lIliliIlil.Illillllil.IliIlllilIi
+----------------------------
+
+Iiiiliiiiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+iIIIlIlIIl(int java.lang.String java.lang.String java.lang.String int java.lang.String int java.lang.String int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [41[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+Iliilliiilii(java.lang.String )
+  Unable to fully structure code
+IIIIllIIIl(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Handled impossible loop by adding 'first' condition
+llIIlilIIl(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+Lusik21556.IlIillIiilIi.IiIiliIiiiIi.IIlilIliiIli.Illillliilli.Iilililiiili.IIiilIiiiIii.iliIiiliiiii
+----------------------------
+
+IIIllIIliIIl(int int java.lang.String java.lang.String int java.lang.String int java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [37[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+IlIlllIlilIl(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [35[UNCONDITIONALDOLOOP], 36[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+lIiiIiIlilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+
+
+Lusik21556.llIIlilIIl.IiIIlliIIl.iiIIlIIlIl.iliIiiliiiii
+----------------------------
+
+Iilililiiili(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+Illillliilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [54[UNCONDITIONALDOLOOP], 56[DOLOOP], 55[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIlilIliiIli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Iliilliiilii(java.lang.String int int )
+  Unable to fully structure code
+Iiiiliiiiiii()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [39[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIiilIiiiIii(java.lang.String int int java.lang.String int java.lang.String java.lang.String java.lang.String int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [37[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.Iiiilliiil.IliIlllilIi
+----------------------------
+
+IlIillIiilIi()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 41[UNCONDITIONALDOLOOP]
+Iiilliiliiil(java.lang.String java.lang.String java.lang.String int int java.lang.String java.lang.String int int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [41[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+Iilllilliill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [9[CASE]], but top level block is 0[TRYBLOCK]
+IIillIiliIil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [1[TRYBLOCK]], but top level block is 64[UNCONDITIONALDOLOOP]
+
+
+Lusik21556.Iliilliiilii.Iiiiliiiiiii.IIIIllIIIl.iIIIlIlIIl.liiiIIllIl
+----------------------------
+
+IiIiliIiiiIi(java.lang.String int java.lang.String java.lang.String java.lang.String java.lang.String java.lang.String int int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IlIillIiilIi(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+Iiilliiliiil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IIIilIIiiIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [63[UNCONDITIONALDOLOOP], 21[CASE]], but top level block is 2[TRYBLOCK]
+
+
+Lusik21556.ilIllIiIll.liIlliiIll.IIllllIlll.iIlllIllll.IliIlllilIi
+----------------------------
+
+iliIiiliiiii(java.lang.String java.lang.String int int int java.lang.String java.lang.String int int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [52[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+iIlIlllllill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [13[CASE], 27[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+lIiiIiIlilli(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Handled impossible loop by duplicating code
+
+
+Lusik21556.lIilliIill.Ilillllill.ilillIiill.liilliiill.IIIillIIil.iIIilIlIil.liiiIIllIl
+----------------------------
+
+IIiilIiiiIii()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [87[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+<clinit>()
+  Unable to fully structure code
+Iiilliiliiil(java.lang.Object[] )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+IlIillIiilIi(java.lang.String )
+  Unable to fully structure code
+IIlilIliiIli(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+IiIiliIiiiIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [53[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Illillliilli(java.lang.String java.lang.String java.lang.String java.lang.String java.lang.String int int int java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 4 blocks at once
+
+
+Lusik21556.Iliilliiilii.Iiiiliiiiiii.IIIIllIIIl.iIIIlIlIIl.iIlIlllllill
+----------------------------
+
+IiIIlliIIl(java.lang.String int int java.lang.String java.lang.String java.lang.String int java.lang.String int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IIIIllIIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [27[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+llIIlilIIl(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+iIIIlIlIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [22[CASE]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.ilIllIiIll.liIlliiIll.IIllllIlll.iIlllIllll.liiiIIllIl
+----------------------------
+
+iIlIlllllill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [35[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+lIiiIiIlilli(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+IilliliilIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IlIlllIlilIl()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 26[UNCONDITIONALDOLOOP]
+IIIllIIliIIl(java.lang.String int int )
+  Handled impossible loop by adding 'first' condition
+iliIiiliiiii(java.lang.String java.lang.String int int java.lang.String int java.lang.String int int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [1[TRYBLOCK], 2[TRYBLOCK], 3[TRYBLOCK]], but top level block is 17[SWITCH]
+
+
+Lusik21556.IiiIlliiIl.iiiIlIIIll.lIIlliIIll.IlIllllIll.IliIlllilIi
+----------------------------
+
+iIiIlIliIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+lIIlliIIll()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [89[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIiIllIiIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [30[UNCONDITIONALDOLOOP], 13[CASE]], but top level block is 1[TRYBLOCK]
+IiiIlliiIl(int java.lang.String java.lang.String java.lang.String int java.lang.String int java.lang.String int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+iiiIlIIIll(java.lang.String int int )
+  Unable to fully structure code
+
+
+Lusik21556.IIIllIIliIIl.IlIlllIlilIl.IiIlliIliiIl.IIlllIlliIll.lIiiIiIlilli
+----------------------------
+
+Iilllilliill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [17[CASE]], but top level block is 0[TRYBLOCK]
+Ililllililil(int int java.lang.String java.lang.String int java.lang.String java.lang.String java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+IIIilIIiiIIi()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [29[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Illlllllilll(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Iiilliiliiil(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.IIIllIIliIIl
+----------------------------
+
+IiiIlliiIl()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [110[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+lilIliilIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+illIlIilIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+iIiIlIliIl(java.lang.String int java.lang.String int java.lang.String int int int java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+
+
+Lusik21556.ilIllIiIll.liIlliiIll.IIllllIlll.iIlllIllll.iIlIlllllill
+----------------------------
+
+IIillIiliIil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 16[SWITCH]
+Iilllilliill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [32[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IlIillIiilIi()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [32[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Iiilliiliiil(java.lang.String int int java.lang.String int java.lang.String int int java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [17[CASE]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.IlIillIiilIi.IiIiliIiiiIi.IIlilIliiIli.Illillliilli.Iilililiiili.IIiilIiiiIii.liiiIIllIl
+----------------------------
+
+iIlIlllllill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+iliIiiliiiii(int int int java.lang.String java.lang.String java.lang.String java.lang.String int int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+IilliliilIIi(java.lang.String )
+  Unable to fully structure code
+
+
+Lusik21556.llIIlilIIl.IiIIlliIIl.iiIIlIIlIl.IilliliilIIi
+----------------------------
+
+IIillIiliIil(java.lang.String )
+  Unable to fully structure code
+IIIilIIiiIIi(int int int java.lang.String int java.lang.String java.lang.String int int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK], 1[TRYBLOCK]], but top level block is 14[SWITCH]
+Ililllililil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [16[CASE]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.Illlllllilll.Iilllilliill.IIillIiliIil.Ililllililil.Iiilliiliiil.IIIilIIiiIIi.IliIlllilIi
+----------------------------
+
+liilliiill(java.lang.String java.lang.String int int int java.lang.String java.lang.String java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Back jump on a try block [egrp 6[TRYBLOCK] [0 : 503->832)] java.lang.Exception
+Ilillllill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IIIillIIil(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+ilillIiill(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+lIilliIill(java.lang.String )
+  Unable to fully structure code
+
+
+Lusik21556.IlIillIiilIi.IiIiliIiiiIi.IIlilIliiIli.Illillliilli.Iilililiiili.IIiilIiiiIii.IIIllIIliIIl
+----------------------------
+
+IlIlllIlilIl(int int java.lang.String java.lang.String int java.lang.String java.lang.String java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK], 1[TRYBLOCK]], but top level block is 15[SWITCH]
+IiIlliIliiIl(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [14[UNCONDITIONALDOLOOP]], but top level block is 2[TRYBLOCK]
+lIiiIiIlilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [9[CASE]], but top level block is 0[TRYBLOCK]
+iliIiiliiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [61[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+IIlllIlliIll()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [30[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.IlIillIiilIi.IiIiliIiiiIi.IIlilIliiIli.Illillliilli.Iilililiiili.IIiilIiiiIii.IliIlllilIi
+----------------------------
+
+IIlllIlliIll(java.lang.String int int )
+  Unable to fully structure code
+Illlllllilll()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+IiIlliIliiIl(java.lang.String int int java.lang.String int java.lang.String int java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [1[TRYBLOCK], 3[TRYBLOCK], 2[TRYBLOCK]], but top level block is 22[SWITCH]
+IlIlllIlilIl(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Unable to fully structure code
+iliIiiliiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: CONTINUE without a while class org.benf.cfr.reader.bytecode.analysis.parse.statement.AssignmentSimple
+IIIllIIliIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 13[SWITCH]
+
+
+Lusik21556.lIilliIill.Ilillllill.ilillIiill.liilliiill.IIIillIIil.iIIilIlIil.IilliliilIIi
+----------------------------
+
+iliIiiliiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IiIlliIliiIl(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+lIiiIiIlilli(java.lang.String )
+  Unable to fully structure code
+IlIlllIlilIl(int int java.lang.String java.lang.String java.lang.String java.lang.String int java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Back jump on a try block [egrp 5[TRYBLOCK] [0 : 553->880)] java.lang.Exception
+
+
+Lusik21556.IliIlllilIi.liiiIIllIl.iIlIlllllill.IilliliilIIi.lIiiIiIlilli.iliIiiliiiii.IilliliilIIi
+----------------------------
+
+Ililllililil(int java.lang.String java.lang.String int java.lang.String java.lang.String int java.lang.String java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK], 1[TRYBLOCK]], but top level block is 14[SWITCH]
+Iilllilliill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Illlllllilll(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [32[UNCONDITIONALDOLOOP], 30[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+
+
+Lusik21556.IiiIlliiIl.iiiIlIIIll.lIIlliIIll.IlIllllIll.liiiIIllIl
+----------------------------
+
+Ililllililil(java.lang.String java.lang.String int java.lang.String int java.lang.String java.lang.String int int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+IIIilIIiiIIi()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [28[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Illlllllilll(java.lang.String )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+Iilllilliill(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IIillIiliIil(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+
+
+Lusik21556.Illlllllilll.Iilllilliill.IIillIiliIil.Ililllililil.Iiilliiliiil.IIIilIIiiIIi.liiiIIllIl
+----------------------------
+
+Ililllililil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [11[CASE], 30[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+IIlilIliiIli()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [42[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IiIiliIiiiIi(java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+Iiilliiliiil(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+IlIillIiilIi(java.lang.String int java.lang.String int int int java.lang.String java.lang.String int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [1[TRYBLOCK], 0[TRYBLOCK]], but top level block is 16[SWITCH]
+
+
+Lusik21556.lIilliIill.Ilillllill.ilillIiill.liilliiill.IIIillIIil.iIIilIlIil.IliIlllilIi
+----------------------------
+
+IIlilIliiIli(java.lang.String int java.lang.String int int java.lang.String int java.lang.String int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [40[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IlIillIiilIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [55[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
+IIIilIIiiIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [30[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IiIiliIiiiIi(java.lang.invoke.MethodHandles$Lookup java.lang.String java.lang.invoke.MethodType )
+  Recovered potentially malformed switches.  Disable with '--allowmalformedswitch false'
+  Unable to fully structure code
+Iilililiiili()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [42[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.llIIlilIIl.IiIIlliIIl.iiIIlIIlIl.IliIlllilIi
+----------------------------
+
+Illillliilli()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [30[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+Iiilliiliiil(java.lang.String )
+  Unable to fully structure code
+IiIiliIiiiIi(java.lang.String int java.lang.String java.lang.String int java.lang.String int int java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Back jump on a try block [egrp 4[TRYBLOCK] [0 : 317->612)] java.lang.Exception
+IIIilIIiiIIi(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [18[CASE]], but top level block is 0[TRYBLOCK]
+
+
+Lusik21556.IIIllIIliIIl.IlIlllIlilIl.IiIlliIliiIl.IIlllIlliIll.IlIlllIlilIl
+----------------------------
+
+Iiiiliiiiiii()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [53[UNCONDITIONALDOLOOP]], but top level block is 0[TRYBLOCK]
+IIlilIliiIli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [8[CASE]], but top level block is 28[DOLOOP]
+Illillliilli(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [2[TRYBLOCK]], but top level block is 16[SWITCH]
+IIiilIiiiIii(int java.lang.String java.lang.String int int int java.lang.String int java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [2[TRYBLOCK], 3[TRYBLOCK], 4[TRYBLOCK]], but top level block is 27[SWITCH]
+
+
+Lusik21556.IiiIlliiIl.iiiIlIIIll.lIIlliIIll.IlIllllIll.IIIllIIliIIl
+----------------------------
+
+IiIlliIliiIl(java.lang.String int int java.lang.String java.lang.String int java.lang.String int java.lang.String java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+IIIllIIliIIl(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous, and can't clone.
+iliIiiliiiii(java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [14[CASE], 38[UNCONDITIONALDOLOOP]], but top level block is 1[TRYBLOCK]
