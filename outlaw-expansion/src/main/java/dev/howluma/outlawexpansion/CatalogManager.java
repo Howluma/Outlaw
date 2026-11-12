@@ -49,9 +49,10 @@ public final class CatalogManager {
         return new CatalogEntry(
                 entry.getString("display-name", id), entry.getInt("tier", 0),
                 price, entry.getString("implementation", "needs-verification"),
+                entry.getString("icon", "PAPER"),
                 List.copyOf(entry.getStringList("lore")));
     }
 
     public record CatalogEntry(String name, int tier, double plannedPrice,
-                               String implementation, List<String> lore) {}
+                               String implementation, String icon, List<String> lore) {}
 }
