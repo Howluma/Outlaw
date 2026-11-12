@@ -61,3 +61,7 @@ heads:
     enabled: true
     killer-victim-cooldown-minutes: 60
     victim-cooldown-minutes: 10
+    # Advanced fallback for vendors that spawn a head entity directly instead
+    # of adding the minted head to PlayerDeathEvent#getDrops.
+    # Off by default: could catch a dead player's pre-owned matching skull.
+    catch-direct-spawns: false
