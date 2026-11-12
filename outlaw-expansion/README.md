@@ -57,7 +57,7 @@ Set `perks.blacksmith.new-recipes-enabled: true` in `plugins/OutlawExpansion/con
 
 ### Head anti-farm guard
 
-On by default under `heads.anti-farm`, the companion records which UUIDs have killed which victims and saves timestamps into `plugins/OutlawExpansion/head-guard.yml`. Repeated kills of the same victim by a killer within **60 minutes**, or of that victim by *any* killer within **10 minutes**, suppress the resulting `PLAYER_HEAD` drops. Both the death drop list and immediate nearby item spawns are checked.
+On by default under `heads.anti-farm`, the companion records which UUIDs have killed which victims and saves timestamps into `plugins/OutlawExpansion/head-guard.yml`. Repeated kills of the same victim by a killer within **60 minutes**, or of that victim by *any* killer within **10 minutes**, suppress the resulting `PLAYER_HEAD` drops. The default filter checks the death drop list for **newly created heads owned by the victim**, keeping other players' skulls and pre-owned victim heads intact. For vendors that drop items directly into the world, `heads.anti-farm.catch-direct-spawns` provides an additional **opt-in** nearby-item filter; it is off by default because a matching pre-owned skull dropped in the same window could be mistaken for a new reward. Suicides and deaths without a player killer are not eligible to mint new rewarded heads.
 
 This is a **drop-rate anti-farm guard, not guaranteed redemption anti-duplication**. The original Sheriff may still accept already-duplicated or old skulls. Its deposit rules, permanent redemption ledger, and original balance transaction are outside the addon. Test vendor head-spawn ordering before trusting this as production enforcement.
 
