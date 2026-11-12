@@ -50,6 +50,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
     private QuickdrawBoost quickdrawBoost;
     private TankWindChargeFix tankWindChargeFix;
     private LifestealerConversion lifestealerConversion;
+    private CompatibilityTrace compatibilityTrace;
     private NamespacedKey swiftModifierKey;
     private final Map<UUID, Integer> swiftGenerations = new HashMap<>();
     private int swiftGeneration;
@@ -65,6 +66,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         quickdrawBoost = new QuickdrawBoost(this);
         tankWindChargeFix = new TankWindChargeFix(this);
         lifestealerConversion = new LifestealerConversion(this);
+        compatibilityTrace = new CompatibilityTrace(this);
         swiftModifierKey = new NamespacedKey(this, "swift_speed_ii");
         Plugin vendor = Bukkit.getPluginManager().getPlugin("OutlawSMP");
         if (vendor == null || !vendor.isEnabled()) {
@@ -91,6 +93,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         Bukkit.getPluginManager().registerEvents(quickdrawBoost, this);
         Bukkit.getPluginManager().registerEvents(tankWindChargeFix, this);
         Bukkit.getPluginManager().registerEvents(lifestealerConversion, this);
+        Bukkit.getPluginManager().registerEvents(compatibilityTrace, this);
         quickdrawBoost.start();
         blacksmithRecipes.reload();
         Objects.requireNonNull(getCommand("outlawexpansion")).setExecutor(this);
@@ -101,6 +104,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         if (blacksmithRecipes != null) blacksmithRecipes.unregister();
         if (headFarmGuard != null) headFarmGuard.shutdown();
         if (quickdrawBoost != null) quickdrawBoost.stop();
+        if (compatibilityTrace != null) compatibilityTrace.stop();
         for (Player player : Bukkit.getOnlinePlayers()) {
             removeSwiftModifier(player);
         }
@@ -283,6 +287,20 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
             sender.sendMessage(ChatColor.GREEN + "OutlawExpansion config and draft catalog reloaded.");
             return true;
         }
+        if (args.length >= 1 && args[0].equalsIgnoreCase("trace")) {
+            if (args.length == 2 && args[1].equalsIgnoreCase("stop")) {
+                compatibilityTrace.stop();
+                sender.sendMessage(ChatColor.YELLOW + "Compatibility trace stopped.");
+                return true;
+            }
+            if (sender instanceof Player player && args.length == 2
+                    && args[1].equalsIgnoreCase("start")) {
+                compatibilityTrace.start(player);
+                return true;
+            }
+            sender.sendMessage(ChatColor.YELLOW + "Usage in game: /outlawexpansion trace start|stop");
+            return true;
+        }
         if (args.length >= 1 && args[0].equalsIgnoreCase("preview")) {
             if (!(sender instanceof Player player)) {
                 sender.sendMessage("Preview requires an in-game admin.");
@@ -369,7 +387,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
             return true;
         }
         sender.sendMessage(ChatColor.YELLOW + "Usage: /" + label
-                + " <status|reload|catalog [skill|perk] [id]|preview skills|perks|inspect on|off>");
+                + " <status|reload|catalog [skill|perk] [id]|preview skills|perks|inspect on|off|trace start|stop>");
         return true;
     }
 }
