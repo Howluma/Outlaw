@@ -30,3 +30,11 @@ skills:
   swift:
     enabled: false
     duration-seconds: 10
+
+# Head anti-farming mitigates repeated kills, not pre-existing/duped skulls
+# or the vendor sheriff's unverified redemption code.
+heads:
+  anti-farm:
+    enabled: true
+    killer-victim-cooldown-minutes: 60
+    victim-cooldown-minutes: 10
