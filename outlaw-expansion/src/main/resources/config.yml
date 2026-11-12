@@ -17,3 +17,10 @@ perks:
   sharpshooter:
     enabled: false
     projectile-velocity-multiplier: 1.25
+
+# Optional Swift replacement, disabled until validated with the vendor's
+# /abilityuse event order. Only replaces a 10s PLUGIN-applied Speed II effect.
+skills:
+  swift:
+    enabled: false
+    duration-seconds: 10

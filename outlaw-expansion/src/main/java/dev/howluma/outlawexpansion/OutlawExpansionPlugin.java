@@ -1,6 +1,18 @@
 package dev.howluma.outlawexpansion;
 
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+import org.bukkit.NamespacedKey;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeInstance;
+import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.event.entity.EntityPotionEffectEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import java.util.Locale;
 import java.util.Objects;
 import org.bukkit.Bukkit;
@@ -30,10 +42,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class OutlawExpansionPlugin extends JavaPlugin implements Listener, CommandExecutor {
 
     private Method placeholderMethod;
+    private NamespacedKey swiftModifierKey;
+    private final Map<UUID, Integer> swiftGenerations = new HashMap<>();
+    private int swiftGeneration;
 
     @Override
     public void onEnable() {
         saveDefaultConfig();
+        swiftModifierKey = new NamespacedKey(this, "swift_speed_ii");
         Plugin vendor = Bukkit.getPluginManager().getPlugin("OutlawSMP");
         if (vendor == null || !vendor.isEnabled()) {
             getLogger().warning("OutlawSMP was not found. Standalone TNT changes can still run.");
@@ -53,6 +69,81 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         }
         Bukkit.getPluginManager().registerEvents(this, this);
         Objects.requireNonNull(getCommand("outlawexpansion")).setExecutor(this);
+    }
+
+    @Override
+    public void onDisable() {
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            removeSwiftModifier(player);
+        }
+        swiftGenerations.clear();
+    }
+
+    /**
+     * Convert only the vendor-applied Swift Speed II potion effect into
+     * a non-persistent movement-speed attribute modifier.
+     * Other plugin/potion/beacon effects are intentionally left alone.
+     */
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+    public void onSwiftPotionEffect(EntityPotionEffectEvent event) {
+        if (!getConfig().getBoolean("skills.swift.enabled", false)) {
+            return;
+        }
+        if (!(event.getEntity() instanceof Player player)
+                || event.getModifiedType() != PotionEffectType.SPEED
+                || event.getCause() != EntityPotionEffectEvent.Cause.PLUGIN
+                || !matchesSkill(resolvePlaceholder(player, "%outlawsmp_skill%"), "swift")) {
+            return;
+        }
+        PotionEffect incoming = event.getNewEffect();
+        int expectedTicks = getConfig().getInt("skills.swift.duration-seconds", 10) * 20;
+        if (incoming == null || incoming.getAmplifier() != 1 || expectedTicks <= 0
+                || Math.abs(incoming.getDuration() - expectedTicks) > 20) {
+            return;
+        }
+        AttributeInstance speed = player.getAttribute(Attribute.MOVEMENT_SPEED);
+        if (speed == null) {
+            return;
+        }
+        event.setCancelled(true);
+        removeSwiftModifier(player);
+        swiftGenerations.put(player.getUniqueId(), ++swiftGeneration);
+        int activation = swiftGeneration;
+        // Speed II = 40% increased movement speed, without a potion effect.
+        speed.addTransientModifier(new AttributeModifier(
+                swiftModifierKey, 0.4, AttributeModifier.Operation.MULTIPLY_SCALAR_1));
+        Bukkit.getScheduler().runTaskLater(this, () -> {
+            if (Objects.equals(swiftGenerations.get(player.getUniqueId()), activation)) {
+                swiftGenerations.remove(player.getUniqueId());
+                removeSwiftModifier(player);
+            }
+        }, incoming.getDuration());
+    }
+
+    @EventHandler
+    public void onSwiftLogout(PlayerQuitEvent event) {
+        swiftGenerations.remove(event.getPlayer().getUniqueId());
+        removeSwiftModifier(event.getPlayer());
+    }
+
+    @EventHandler
+    public void onSwiftDeath(PlayerDeathEvent event) {
+        swiftGenerations.remove(event.getEntity().getUniqueId());
+        removeSwiftModifier(event.getEntity());
+    }
+
+    private void removeSwiftModifier(Player player) {
+        if (swiftModifierKey == null) {
+            return;
+        }
+        AttributeInstance speed = player.getAttribute(Attribute.MOVEMENT_SPEED);
+        if (speed != null && speed.getModifier(swiftModifierKey) != null) {
+            speed.removeModifier(swiftModifierKey);
+        }
+    }
+
+    private boolean matchesSkill(String response, String expectedSkill) {
+        return matchesPerk(response, expectedSkill);
     }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
@@ -164,6 +255,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
             sender.sendMessage("TNT scaling: " + getConfig().getBoolean("tnt.enabled", true));
             sender.sendMessage("Toughness addon: " + getConfig().getBoolean("perks.toughness.enabled", false));
             sender.sendMessage("Sharpshooter addon: " + getConfig().getBoolean("perks.sharpshooter.enabled", false));
+            sender.sendMessage("Swift attribute addon: " + getConfig().getBoolean("skills.swift.enabled", false));
             if (sender instanceof Player player) {
                 sender.sendMessage("Equipped perk 1: " + resolvePlaceholder(player, "%outlawsmp_perk1%"));
                 sender.sendMessage("Equipped perk 2: " + resolvePlaceholder(player, "%outlawsmp_perk2%"));

@@ -15,6 +15,7 @@ Paper's damage API exposes damage sources and primed TNT source attribution. The
 - TNT explosion damage: 1.25x raw damage to entities other than the original igniter; 0.50x raw damage to the player who directly ignited TNT, where TNTPrimed.getSource() identifies that player.
 - Optional Toughness: multiply raw incoming damage for players carrying Toughness by 0.975. **Off by default** because the original 95% non-player reduction must be disabled in the vendor's config first.
 - Optional Sharpshooter: increase crossbow-shot projectile velocity; initial configurable multiplier 1.25. **Off by default** until the original 50% crossbow bonus is disabled.
+- Optional Swift prototype: intercept a 10-second, plugin-applied Speed II effect while Swift is selected, replace it with a temporary +40% movement speed attribute modifier, and clean up on expiry, death, logout, and plugin shutdown. **Off by default** until live event-order tests succeed. Haste II is untouched.
 - /outlawexpansion status shows whether PlaceholderAPI is resolving a player's equipped abilities/perks.
 - /outlawexpansion reload reloads the companion's own config.
 
@@ -24,7 +25,7 @@ Paper's damage API exposes damage sources and primed TNT source attribution. The
 - Making the original sheriff NPC count and pay out unique verified heads across sessions.
 - Dropping a banknote redeemable through the **existing** money balance without a transaction-safe economy API.
 - Replacing Quickdraw's temporary enchantment behavior: its existing update loop could overwrite or fight our replacement, and inventories need anti-duplication tests.
-- Tank, Degenerate, Swift, Lifestealer: requires a temporary server to identify event ordering and whether the original plugin blocks/reapplies effects.
+- Tank, Degenerate, Lifestealer: requires a temporary server to identify event ordering and whether the original plugin blocks/reapplies effects. Swift has a disabled opt-in prototype.
 
 These are still part of the requested work. Do not confuse an addon-created *second* bounty economy with the existing one.
 
