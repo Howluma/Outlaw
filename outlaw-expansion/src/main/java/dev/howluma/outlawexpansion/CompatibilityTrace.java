@@ -12,6 +12,9 @@ import org.bukkit.event.entity.EntityKnockbackByEntityEvent;
 import org.bukkit.event.entity.EntityPotionEffectEvent;
 import org.bukkit.event.entity.EntityRegainHealthEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 
 /**
  * Small, privacy-conscious event trace to identify vendor event interference.
@@ -104,6 +107,29 @@ public final class CompatibilityTrace implements Listener {
     public void onDamage(EntityDamageByEntityEvent event) {
         if (!matches(event.getDamager()) && !matches(event.getEntity())) return;
         log("damage cause=" + event.getCause() + " final=" + event.getFinalDamage()
+                + " cancelled=" + event.isCancelled());
+    }
+
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = false)
+    public void onNpcInteraction(PlayerInteractEntityEvent event) {
+        if (!matches(event.getPlayer())) return;
+        log("npc-interact entityType=" + event.getRightClicked().getType()
+                + " mainHandItem=" + event.getPlayer().getInventory()
+                .getItemInMainHand().getType()
+                + " cancelled=" + event.isCancelled());
+    }
+
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = false)
+    public void onGuiInteraction(InventoryClickEvent event) {
+        if (!(event.getWhoClicked() instanceof Player player) || !matches(player)) return;
+        String title = PlainTextComponentSerializer.plainText()
+                .serialize(event.getView().title()).toLowerCase();
+        if (!title.contains("sheriff") && !title.contains("bounty")
+                && !title.contains("shop") && !title.contains("perk")
+                && !title.contains("skill")) return;
+        log("gui-click slot=" + event.getRawSlot()
+                + " item=" + (event.getCurrentItem() == null
+                ? "none" : event.getCurrentItem().getType())
                 + " cancelled=" + event.isCancelled());
     }
 
