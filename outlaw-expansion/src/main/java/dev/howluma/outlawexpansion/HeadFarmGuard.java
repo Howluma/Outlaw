@@ -3,6 +3,10 @@ package dev.howluma.outlawexpansion;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 import java.util.Map;
 import java.util.UUID;
 import org.bukkit.Bukkit;
@@ -58,24 +62,30 @@ public final class HeadFarmGuard implements Listener {
 
         Player victim = event.getEntity();
         Player killer = victim.getKiller();
-        if (killer == null || killer.getUniqueId().equals(victim.getUniqueId())) return;
-
         UUID victimId = victim.getUniqueId();
-        UUID killerId = killer.getUniqueId();
-        Pair key = new Pair(killerId, victimId);
         long now = System.currentTimeMillis();
 
-        boolean pairBlocked = MechanicRules.withinCooldown(now, killerVictim.get(key), pairCooldown());
-        boolean victimBlocked = MechanicRules.withinCooldown(now, victimLast.get(victimId), victimCooldown());
-        boolean denied = pairBlocked || victimBlocked;
-
-        if (!denied) {
-            killerVictim.put(key, now);
-            victimLast.put(victimId, now);
-            save();
+        // Allow genuine heads already in a dead player's inventory to drop.
+        // Only newly minted heads matching this death victim may be blocked.
+        int preexisting = 0;
+        for (ItemStack stored : victim.getInventory().getContents()) {
+            if (isVictimHead(stored, victimId)) preexisting += stored.getAmount();
         }
 
-        pending.put(victimId, new PendingDeath(victim.getLocation().clone(), now, denied));
+        boolean denied = killer == null || killer.getUniqueId().equals(victimId);
+        if (!denied) {
+            Pair key = new Pair(killer.getUniqueId(), victimId);
+            denied = MechanicRules.withinCooldown(now, killerVictim.get(key), pairCooldown())
+                    || MechanicRules.withinCooldown(now, victimLast.get(victimId), victimCooldown());
+            if (!denied) {
+                killerVictim.put(key, now);
+                victimLast.put(victimId, now);
+                save();
+            }
+        }
+
+        pending.put(victimId, new PendingDeath(
+                victim.getLocation().clone(), now, denied, victimId, preexisting));
         // Monitor only the immediate death-spawn window. No long-lived world scan.
         Bukkit.getScheduler().runTaskLater(plugin, () -> pending.remove(victimId), 5L);
     }
@@ -84,20 +94,31 @@ public final class HeadFarmGuard implements Listener {
     public void onDeathDrops(PlayerDeathEvent event) {
         if (!active()) return;
         PendingDeath recent = pending.get(event.getEntity().getUniqueId());
-        if (recent != null && recent.denied()) {
-            event.getDrops().removeIf(item -> item.getType() == Material.PLAYER_HEAD);
+        if (recent == null || !recent.denied()) return;
+        int preserved = recent.preexistingVictimHeads();
+        Iterator<ItemStack> drops = event.getDrops().iterator();
+        while (drops.hasNext()) {
+            ItemStack item = drops.next();
+            if (!isVictimHead(item, recent.victim())) continue;
+            if (preserved >= item.getAmount()) {
+                preserved -= item.getAmount();
+            } else {
+                drops.remove();
+            }
         }
     }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onItemSpawn(ItemSpawnEvent event) {
-        if (!active()) return;
+        if (!active() || !plugin.getConfig().getBoolean(
+                "heads.anti-farm.catch-direct-spawns", false)) return;
         Item drop = event.getEntity();
         if (drop.getItemStack().getType() != Material.PLAYER_HEAD) return;
 
         long now = System.currentTimeMillis();
         for (PendingDeath death : pending.values()) {
-            if (!death.denied() || now - death.when() > 2_000L) continue;
+            if (!death.denied() || now - death.when() > 2_000L
+                    || !isVictimHead(drop.getItemStack(), death.victim())) continue;
             Location location = death.location();
             if (location.getWorld() != null
                     && drop.getWorld().getUID().equals(location.getWorld().getUID())
@@ -106,6 +127,14 @@ public final class HeadFarmGuard implements Listener {
                 return;
             }
         }
+    }
+
+    private boolean isVictimHead(ItemStack item, UUID victim) {
+        if (item == null || item.getType() != Material.PLAYER_HEAD) return false;
+        ItemMeta meta = item.getItemMeta();
+        if (!(meta instanceof SkullMeta skull)) return false;
+        return skull.getOwningPlayer() != null
+                && victim.equals(skull.getOwningPlayer().getUniqueId());
     }
 
     public int recordCount() {
@@ -149,7 +178,7 @@ public final class HeadFarmGuard implements Listener {
         long now = System.currentTimeMillis();
         long retain = Math.max(pairCooldown(), victimCooldown()) + 86_400_000L;
         killerVictim.entrySet().removeIf(e -> e.getValue() < now && now - e.getValue() > retain);
-        victimLast.entrySet().removeIf(e -> e.getValue() > now || now - e.getValue() > retain);
+        victimLast.entrySet().removeIf(e -> e.getValue() < now && now - e.getValue() > retain);
 
         YamlConfiguration yaml = new YamlConfiguration();
         for (Map.Entry<Pair, Long> entry : killerVictim.entrySet()) {
@@ -169,5 +198,6 @@ public final class HeadFarmGuard implements Listener {
 
     private record Pair(UUID killer, UUID victim) {}
 
-    private record PendingDeath(Location location, long when, boolean denied) {}
+    private record PendingDeath(Location location, long when, boolean denied,
+                                UUID victim, int preexistingVictimHeads) {}
 }
