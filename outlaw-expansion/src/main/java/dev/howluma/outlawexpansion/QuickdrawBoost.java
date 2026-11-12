@@ -96,7 +96,7 @@ public final class QuickdrawBoost implements Listener {
 
         if (original == null) {
             original = current;
-            int boosted = Math.min(original + 1, 10);
+            int boosted = MechanicRules.boostedQuickCharge(original);
             if (boosted == original) return false;
             tags.set(originalKey, PersistentDataType.INTEGER, original);
             tags.set(appliedKey, PersistentDataType.INTEGER, boosted);
