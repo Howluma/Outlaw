@@ -19,6 +19,33 @@ Paper's damage API exposes damage sources and primed TNT source attribution. The
 - /outlawexpansion status shows whether PlaceholderAPI is resolving a player's equipped abilities/perks.
 - /outlawexpansion reload reloads the companion's own config.
 
+## Editable catalog and shop inspection (new)
+
+The plugin now ships an easy-edit `plugins/OutlawExpansion/catalog.yml` covering **all 13 abilities and 12 perks**:
+- `display-name`: proposed shop title
+- `lore`: editable target description lines for future revised mechanics
+- `planned-price`: use `-1` to leave the existing vendor price unchanged; set a number to record a proposed new price
+- `implementation`: identifies whether the feature is vendor-configured, a disabled prototype, or needs integration
+
+**These entries are a planning/preview schema, NOT active changes to the original shop or purchase behavior.** We do not pretend to adjust prices without a reliable vendor integration. They let us finalize a single editable config for a future replacement shop.
+
+Admin commands:
+- `/outlawexpansion status` — vendor/PlaceholderAPI compatibility
+- `/outlawexpansion catalog` — counts, preview warning
+- `/outlawexpansion catalog skill swift` — inspect proposed lore and price
+- `/outlawexpansion catalog perk quickdraw` — inspect proposed lore and price
+- `/outlawexpansion inspect on` — as a player admin, arm a **one-shot** capture of the next original Skill/Perk/Outlaw shop GUI opened; print only the shop GUI's item types and visible labels/lore to server console
+- `/outlawexpansion inspect off` — cancel capture
+- `/outlawexpansion reload` — reload companion settings and catalog
+
+### How to reset the vendor's configuration without losing players
+
+The uploaded backup contains **17** player records under `data.yml`, **18** shopkeeper locations, and **1** sheriff NPC location. Only `config.yml` contains the vendor's existing ability/perk tuning. It has **no generic price or lore keys**.
+
+On a backed-up **stopped** test server, rename `plugins/OutlawSMP/config.yml` to `config.old.yml`, restart and check whether the vendor regenerates the bundled default. Leave `data.yml`, `sheriff.yml`, and `shopkeepers.yml` alone. Your license might need to be restored using the vendor's authorized license process. The vendor's `config-version` is part of its migration logic; do not invent a new version.
+
+See `docs/ARCHIVE_AUDIT.md` and `docs/IMPLEMENTATION_ROADMAP.md` before migrating economy data.
+
 ## What is not yet safe to implement as an addon
 
 - Setting or clearing the original plugin's bounty (PlaceholderAPI gives READ-only access, not a write API).
