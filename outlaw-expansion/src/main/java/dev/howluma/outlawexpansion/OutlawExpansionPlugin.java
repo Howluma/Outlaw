@@ -48,6 +48,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
     private BlacksmithRecipeManager blacksmithRecipes;
     private HeadFarmGuard headFarmGuard;
     private QuickdrawBoost quickdrawBoost;
+    private TankWindChargeFix tankWindChargeFix;
     private NamespacedKey swiftModifierKey;
     private final Map<UUID, Integer> swiftGenerations = new HashMap<>();
     private int swiftGeneration;
@@ -61,6 +62,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         blacksmithRecipes = new BlacksmithRecipeManager(this);
         headFarmGuard = new HeadFarmGuard(this);
         quickdrawBoost = new QuickdrawBoost(this);
+        tankWindChargeFix = new TankWindChargeFix(this);
         swiftModifierKey = new NamespacedKey(this, "swift_speed_ii");
         Plugin vendor = Bukkit.getPluginManager().getPlugin("OutlawSMP");
         if (vendor == null || !vendor.isEnabled()) {
@@ -85,6 +87,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         Bukkit.getPluginManager().registerEvents(blacksmithRecipes, this);
         Bukkit.getPluginManager().registerEvents(headFarmGuard, this);
         Bukkit.getPluginManager().registerEvents(quickdrawBoost, this);
+        Bukkit.getPluginManager().registerEvents(tankWindChargeFix, this);
         quickdrawBoost.start();
         blacksmithRecipes.reload();
         Objects.requireNonNull(getCommand("outlawexpansion")).setExecutor(this);
@@ -162,6 +165,10 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         if (speed != null && speed.getModifier(swiftModifierKey) != null) {
             speed.removeModifier(swiftModifierKey);
         }
+    }
+
+    public boolean hasSkill(Player player, String skillName) {
+        return matchesSkill(resolvePlaceholder(player, "%outlawsmp_skill%"), skillName);
     }
 
     private boolean matchesSkill(String response, String expectedSkill) {
@@ -343,6 +350,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
             sender.sendMessage("Blacksmith addon recipes: " + getConfig().getBoolean("perks.blacksmith.new-recipes-enabled", false));
             sender.sendMessage("Head farming guard: " + getConfig().getBoolean("heads.anti-farm.enabled", true));
             sender.sendMessage("Quickdraw boost: " + getConfig().getBoolean("perks.quickdraw.enabled", false));
+            sender.sendMessage("Tank wind charge fix: " + getConfig().getBoolean("skills.tank.wind-charge-knockback-fix", false));
             sender.sendMessage("Draft catalog entries: " + catalog.count("skills") + " skills, "
                     + catalog.count("perks") + " perks (preview only)");
             if (sender instanceof Player player) {
