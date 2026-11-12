@@ -1,0 +1,20 @@
+name: Inspect original OutlawSMP JAR
+on:
+  push:
+    branches: [feature/outlaw-smp-improvements]
+  workflow_dispatch:
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect plugin structure
+        shell: bash
+        run: |
+          set -eu
+          echo '=== PLUGIN METADATA ==='
+          unzip -p OutlawSMP.jar plugin.yml || true
+          echo '=== CLASS LIST (non-shaded) ==='
+          jar tf OutlawSMP.jar | grep -E '(^[^/]+/[^/]+/.*\\.class$|plugin.yml|config.yml)' | head -250 || true
+          echo '=== FILE COUNT ==='
+          jar tf OutlawSMP.jar | wc -l
