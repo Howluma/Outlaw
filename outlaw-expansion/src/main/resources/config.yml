@@ -5,6 +5,11 @@ tnt:
   igniter-damage-multiplier: 0.50
 
 perks:
+  quickdraw:
+    # Requires disabling the original plugin's fixed-level quickdraw behavior;
+    # vendor config and original event loop must be tested first.
+    enabled: false
+    vendor-fixed-level-disabled-confirmed: false
 
   blacksmith:
     # Adds one COBWEB -> two COBWEBs, and an iron-nugget+stick BREEZE_ROD.
