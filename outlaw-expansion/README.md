@@ -53,13 +53,42 @@ See `docs/ARCHIVE_AUDIT.md` and `docs/IMPLEMENTATION_ROADMAP.md` before migratin
 
 Set `perks.blacksmith.new-recipes-enabled: true` in `plugins/OutlawExpansion/config.yml` on a **test server** and use `/outlawexpansion reload`. Test one Blacksmith and one non-Blacksmith. The separate `OUTLAWSMP_CONFIG_PATCH.yml` offers a vendor-config-only alternative; **do not enable both vendor and addon copies of the new recipes at once** until you confirm the recipe order. The four-gold apple recipe is already present in the original config.
 
+## New beta features (source exists and compiles, not all runtime-tested)
+
+### Head anti-farm guard
+
+On by default under `heads.anti-farm`, the companion records which UUIDs have killed which victims and saves timestamps into `plugins/OutlawExpansion/head-guard.yml`. Repeated kills of the same victim by a killer within **60 minutes**, or of that victim by *any* killer within **10 minutes**, suppress the resulting `PLAYER_HEAD` drops. Both the death drop list and immediate nearby item spawns are checked.
+
+This is a **drop-rate anti-farm guard, not guaranteed redemption anti-duplication**. The original Sheriff may still accept already-duplicated or old skulls. Its deposit rules, permanent redemption ledger, and original balance transaction are outside the addon. Test vendor head-spawn ordering before trusting this as production enforcement.
+
+### Reversible Quickdraw +1
+
+The addon can temporarily add +1 Quick Charge to a held crossbow, including level 0 -> 1 and III -> IV, and restore its original level on unequip, drop, death, inventory movement, quit, restart, and shutdown. The original level is stored in a private PersistentDataContainer tag to survive crashes.
+
+**Disabled by default.** Both `perks.quickdraw.enabled: true` and `perks.quickdraw.vendor-fixed-level-disabled-confirmed: true` must be set. First test that changing the vendor's `quick-charge-level` to zero actually disables its fixed-enchant loop; otherwise vendor and addon may fight each other.
+
+### Experimental Lifestealer + Tank
+
+- `skills.lifestealer.convert-regeneration: true`: intercept vendor-like 60-tick Regeneration I gained directly during a Lifestealer hit and replace it with immediate healing equal to the target's *actual health lost* (capped by final damage after mitigation and caster missing health). If the vendor applies Regen through a delayed task, this event-based prototype may miss it.
+- `skills.tank.wind-charge-knockback-fix: true`: attempt to un-cancel a wind-charge knockback event for a player equipped with Tank. Does not yet cover every possible explosion-velocity path and may require further work if the vendor resets velocity later.
+
+**These are off by default and must be tested one at a time on a staging server.** The original vendor effects are not known to support a formal callback.
+
+### Inspect exactly what the original vendor does
+
+As an operator in-game, run `/outlawexpansion trace start`. You have 60 seconds (max 120 records) to reproduce a Tank wind-charge throw, a Degenerate Instant Health splash, or a Lifestealer hit. The companion logs the event type/cause/cancellation state to the server console; it does **not** log player names or UUIDs. `/outlawexpansion trace stop` ends the capture early. Share only the sanitized trace lines to investigate compatibility.
+
+### Automated regression checks
+
+Four JUnit tests now cover cooldown persistence arithmetic/clock rollback, Quick Charge +1, post-mitigation Lifestealer healing, and independent TNT self-damage scaling. GitHub Actions runs `mvn verify` against Paper 1.21.11 and uploads a compiled test artifact.
+
 ## What is not yet safe to implement as an addon
 
 - Setting or clearing the original plugin's bounty (PlaceholderAPI gives READ-only access, not a write API).
 - Making the original sheriff NPC count and pay out unique verified heads across sessions.
 - Dropping a banknote redeemable through the **existing** money balance without a transaction-safe economy API.
-- Replacing Quickdraw's temporary enchantment behavior: its existing update loop could overwrite or fight our replacement, and inventories need anti-duplication tests.
-- Tank, Degenerate, Lifestealer: requires a temporary server to identify event ordering and whether the original plugin blocks/reapplies effects. Swift has a disabled opt-in prototype.
+- Activating Quickdraw safely without testing whether the original plugin can disable its fixed-level enchantment updater. The addon prototype is off by default.
+- Degenerate's Instant Health potion exception still requires an observed in-game heal-cancellation path. Tank, Lifestealer and Swift have disabled compatibility prototypes, not verified drop-in fixes.
 
 These are still part of the requested work. Do not confuse an addon-created *second* bounty economy with the existing one.
 
