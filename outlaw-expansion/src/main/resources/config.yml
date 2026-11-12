@@ -32,6 +32,10 @@ perks:
 # Optional Swift replacement, disabled until validated with the vendor's
 # /abilityuse event order. Only replaces a 10s PLUGIN-applied Speed II effect.
 skills:
+  tank:
+    # Experimental: re-enable player's own wind-charge knockback when Tank selected.
+    # Not guaranteed against a different plugin cancelling after this handler.
+    wind-charge-knockback-fix: false
   swift:
     enabled: false
     duration-seconds: 10
