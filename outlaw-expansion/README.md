@@ -24,17 +24,19 @@ Paper's damage API exposes damage sources and primed TNT source attribution. The
 
 The plugin now ships an easy-edit `plugins/OutlawExpansion/catalog.yml` covering **all 13 abilities and 12 perks**:
 - `display-name`: proposed shop title
+- `icon`: editable Material name used by the in-game design preview
 - `lore`: editable target description lines for future revised mechanics
 - `planned-price`: use `-1` to leave the existing vendor price unchanged; set a number to record a proposed new price
 - `implementation`: identifies whether the feature is vendor-configured, a disabled prototype, or needs integration
 
-**These entries are a planning/preview schema, NOT active changes to the original shop or purchase behavior.** We do not pretend to adjust prices without a reliable vendor integration. They let us finalize a single editable config for a future replacement shop.
+**These entries are a planning/preview schema, NOT active changes to the original shop or purchase behavior.** We do not pretend to adjust prices without a reliable vendor integration. They let us finalize a single editable config for a future replacement shop. The in-game **preview** GUI is protected against click/drag purchases or item extraction.
 
 Admin commands:
 - `/outlawexpansion status` — vendor/PlaceholderAPI compatibility
 - `/outlawexpansion catalog` — counts, preview warning
 - `/outlawexpansion catalog skill swift` — inspect proposed lore and price
 - `/outlawexpansion catalog perk quickdraw` — inspect proposed lore and price
+- `/outlawexpansion preview skills` / `preview perks` — open a non-purchasable, read-only GUI showing all editable names, lore, icons and proposed prices
 - `/outlawexpansion inspect on` — as a player admin, arm a **one-shot** capture of the next original Skill/Perk/Outlaw shop GUI opened; print only the shop GUI's item types and visible labels/lore to server console
 - `/outlawexpansion inspect off` — cancel capture
 - `/outlawexpansion reload` — reload companion settings and catalog
