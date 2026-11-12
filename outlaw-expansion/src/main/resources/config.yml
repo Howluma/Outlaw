@@ -5,6 +5,12 @@ tnt:
   igniter-damage-multiplier: 0.50
 
 perks:
+
+  blacksmith:
+    # Adds one COBWEB -> two COBWEBs, and an iron-nugget+stick BREEZE_ROD.
+    # Uses PlaceholderAPI to ensure only Blacksmith perk owners can craft.
+    # Off until the original plugin is tested for recipe collisions.
+    new-recipes-enabled: false
   # Enable ONLY AFTER setting OutlawSMP's native
   # perks.toughness.damage-reduction to 0.0 in plugins/OutlawSMP/config.yml.
   toughness:
