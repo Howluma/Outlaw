@@ -43,6 +43,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
 
     private Method placeholderMethod;
     private CatalogManager catalog;
+    private CatalogPreview preview;
     private ShopInspector inspector;
     private BlacksmithRecipeManager blacksmithRecipes;
     private NamespacedKey swiftModifierKey;
@@ -53,6 +54,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
     public void onEnable() {
         saveDefaultConfig();
         catalog = new CatalogManager(this);
+        preview = new CatalogPreview(catalog);
         inspector = new ShopInspector(this);
         blacksmithRecipes = new BlacksmithRecipeManager(this);
         swiftModifierKey = new NamespacedKey(this, "swift_speed_ii");
@@ -75,6 +77,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         }
         Bukkit.getPluginManager().registerEvents(this, this);
         Bukkit.getPluginManager().registerEvents(inspector, this);
+        Bukkit.getPluginManager().registerEvents(preview, this);
         Bukkit.getPluginManager().registerEvents(blacksmithRecipes, this);
         blacksmithRecipes.reload();
         Objects.requireNonNull(getCommand("outlawexpansion")).setExecutor(this);
@@ -258,6 +261,18 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
             sender.sendMessage(ChatColor.GREEN + "OutlawExpansion config and draft catalog reloaded.");
             return true;
         }
+        if (args.length >= 1 && args[0].equalsIgnoreCase("preview")) {
+            if (!(sender instanceof Player player)) {
+                sender.sendMessage("Preview requires an in-game admin.");
+                return true;
+            }
+            if (args.length != 2) {
+                sender.sendMessage(ChatColor.YELLOW + "Usage: /outlawexpansion preview <skills|perks>");
+                return true;
+            }
+            preview.open(player, args[1]);
+            return true;
+        }
         if (args.length >= 1 && args[0].equalsIgnoreCase("inspect")) {
             if (!(sender instanceof Player player)) {
                 sender.sendMessage("Use this command in game as an admin.");
@@ -328,7 +343,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
             return true;
         }
         sender.sendMessage(ChatColor.YELLOW + "Usage: /" + label
-                + " <status|reload|catalog [skill|perk] [id]|inspect on|off>");
+                + " <status|reload|catalog [skill|perk] [id]|preview skills|perks|inspect on|off>");
         return true;
     }
 }
