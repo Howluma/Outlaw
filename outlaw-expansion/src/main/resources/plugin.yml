@@ -7,8 +7,8 @@ author: Howluma
 softdepend: [OutlawSMP, PlaceholderAPI]
 commands:
   outlawexpansion:
-    description: Diagnostic and configuration command
-    usage: /outlawexpansion <status|reload>
+    description: Diagnostic, catalog preview, and shop inspection commands
+    usage: /outlawexpansion <status|reload|catalog [skill|perk] [id]|inspect on|off>
     permission: outlawexpansion.admin
 permissions:
   outlawexpansion.admin:
