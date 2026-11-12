@@ -217,7 +217,10 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
                 : getConfig().getDouble("tnt.other-damage-multiplier", 1.25);
 
         if (Double.isFinite(multiplier) && multiplier >= 0 && multiplier <= 10) {
-            event.setDamage(event.getDamage() * multiplier);
+            event.setDamage(MechanicRules.tntDamage(event.getDamage(),
+                    getConfig().getDouble("tnt.other-damage-multiplier", 1.25),
+                    getConfig().getDouble("tnt.igniter-damage-multiplier", 0.50),
+                    selfIgnited));
         }
     }
 
