@@ -8,6 +8,7 @@ currency-name: coins
 skills:
   mirage:
     display-name: "Mirage"
+    icon: "ENDER_PEARL"
     planned-price: -1
     implementation: "needs-verification"
     lore:
@@ -16,6 +17,7 @@ skills:
       - "Exact targeting behavior needs test confirmation."
   degenerate:
     display-name: "Degenerate"
+    icon: "FERMENTED_SPIDER_EYE"
     planned-price: -1
     implementation: "needs-integration"
     lore:
@@ -24,6 +26,7 @@ skills:
       - "Instant Health potions still heal affected players."
   swift:
     display-name: "Swift"
+    icon: "SUGAR"
     planned-price: -1
     implementation: "prototype-disabled"
     lore:
@@ -32,6 +35,7 @@ skills:
       - "Keep Haste II during the ability."
   fatigue:
     display-name: "Fatigue"
+    icon: "COBWEB"
     planned-price: -1
     implementation: "needs-verification"
     lore:
@@ -39,6 +43,7 @@ skills:
       - "Inflict Mining Fatigue I and Slowness II for 10 seconds."
   tank:
     display-name: "Tank"
+    icon: "SHIELD"
     planned-price: -1
     implementation: "needs-integration"
     lore:
@@ -47,6 +52,7 @@ skills:
       - "Wind charges still affect your movement."
   venom:
     display-name: "Venom"
+    icon: "SPIDER_EYE"
     planned-price: -1
     implementation: "needs-verification"
     lore:
@@ -54,6 +60,7 @@ skills:
       - "Poison targets for 15 seconds."
   inferno:
     display-name: "Inferno"
+    icon: "FIRE_CHARGE"
     planned-price: -1
     implementation: "needs-verification"
     lore:
@@ -62,6 +69,7 @@ skills:
       - "Exact behavior needs test confirmation."
   shockwave:
     display-name: "Shockwave"
+    icon: "WIND_CHARGE"
     planned-price: -1
     implementation: "needs-verification"
     lore:
@@ -70,6 +78,7 @@ skills:
       - "Base damage: 6; launch power: 2."
   frostbite:
     display-name: "Frostbite"
+    icon: "BLUE_ICE"
     planned-price: -1
     implementation: "needs-verification"
     lore:
@@ -77,6 +86,7 @@ skills:
       - "Freeze affected targets for 3 seconds."
   breach:
     display-name: "Breach"
+    icon: "IRON_AXE"
     planned-price: -1
     implementation: "needs-verification"
     lore:
@@ -85,6 +95,7 @@ skills:
       - "Existing config factor: 0.5; exact effect needs confirmation."
   lifestealer:
     display-name: "Lifestealer"
+    icon: "GLISTERING_MELON_SLICE"
     planned-price: -1
     implementation: "needs-integration"
     lore:
@@ -93,6 +104,7 @@ skills:
       - "Never grants Regeneration."
   wager:
     display-name: "Wager"
+    icon: "GOLD_NUGGET"
     planned-price: -1
     implementation: "needs-verification"
     lore:
@@ -101,6 +113,7 @@ skills:
       - "Original config lists Haste V and +1.5 attack damage."
   hypnosis:
     display-name: "Hypnosis"
+    icon: "ENCHANTED_BOOK"
     planned-price: -1
     implementation: "needs-verification"
     lore:
@@ -110,6 +123,7 @@ skills:
 perks:
   toughness:
     display-name: "Toughness"
+    icon: "NETHERITE_CHESTPLATE"
     tier: 1
     planned-price: -1
     implementation: "prototype-disabled"
@@ -118,6 +132,7 @@ perks:
       - "Replaces original non-player-only mitigation."
   blacksmith:
     display-name: "Blacksmith"
+    icon: "SMITHING_TABLE"
     tier: 1
     planned-price: -1
     implementation: "config-patch"
@@ -127,6 +142,7 @@ perks:
       - "Craft breeze rods from a stick and eight iron nuggets."
   discount:
     display-name: "Discount"
+    icon: "EMERALD"
     tier: 1
     planned-price: -1
     implementation: "vendor-config"
@@ -135,6 +151,7 @@ perks:
       - "Earn 50% more XP from supported sources."
   efficiency:
     display-name: "Efficiency"
+    icon: "GOLDEN_PICKAXE"
     tier: 1
     planned-price: -1
     implementation: "vendor-config"
@@ -142,6 +159,7 @@ perks:
       - "Gain Haste I while equipped."
   shield:
     display-name: "Shield"
+    icon: "SHIELD"
     tier: 2
     planned-price: -1
     implementation: "vendor-config"
@@ -150,6 +168,7 @@ perks:
       - "One-third chance for blocked hits to cost no shield durability."
   regenerate:
     display-name: "Regenerate"
+    icon: "GHAST_TEAR"
     tier: 2
     planned-price: -1
     implementation: "vendor-config"
@@ -157,6 +176,7 @@ perks:
       - "Gain Regeneration I while equipped."
   sharpshooter:
     display-name: "Sharpshooter"
+    icon: "CROSSBOW"
     tier: 2
     planned-price: -1
     implementation: "prototype-disabled"
@@ -166,6 +186,7 @@ perks:
       - "No bonus projectile damage."
   quickdraw:
     display-name: "Quickdraw"
+    icon: "CROSSBOW"
     tier: 2
     planned-price: -1
     implementation: "needs-integration"
@@ -175,6 +196,7 @@ perks:
       - "Does not permanently enchant crossbows."
   swordmaster:
     display-name: "Swordmaster"
+    icon: "DIAMOND_SWORD"
     tier: 3
     planned-price: -1
     implementation: "vendor-config"
@@ -182,6 +204,7 @@ perks:
       - "Deal 25% more damage on sprint and sweep attacks."
   momentum:
     display-name: "Momentum"
+    icon: "REDSTONE"
     tier: 3
     planned-price: -1
     implementation: "vendor-config"
@@ -190,6 +213,7 @@ perks:
       - "Momentum resets after five seconds without a hit."
   adrenaline:
     display-name: "Adrenaline"
+    icon: "NETHER_WART"
     tier: 3
     planned-price: -1
     implementation: "vendor-config"
@@ -197,6 +221,7 @@ perks:
       - "Deal 50% more damage while below six hearts."
   counter:
     display-name: "Counter"
+    icon: "CLOCK"
     tier: 3
     planned-price: -1
     implementation: "vendor-config"
