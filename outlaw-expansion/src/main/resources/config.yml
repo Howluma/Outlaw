@@ -35,6 +35,11 @@ perks:
 # Optional Swift replacement, disabled until validated with the vendor's
 # /abilityuse event order. Only replaces a 10s PLUGIN-applied Speed II effect.
 skills:
+  degenerate:
+    # Experimental: if vendor cancels MAGIC healing while Instant Health
+    # splash/drink potion has affected the player within 2.5 seconds,
+    # restore that event. Does NOT undo all possible healing suppression.
+    restore-instant-health-potions: false
   lifestealer:
     # Experimental: cancel vendor Regeneration I gained on a Lifestealer hit
     # and heal for actual health lost by victim after damage mitigation.
