@@ -51,6 +51,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
     private TankWindChargeFix tankWindChargeFix;
     private LifestealerConversion lifestealerConversion;
     private CompatibilityTrace compatibilityTrace;
+    private TntOwnerTracker tntOwnerTracker;
     private NamespacedKey swiftModifierKey;
     private final Map<UUID, Integer> swiftGenerations = new HashMap<>();
     private int swiftGeneration;
@@ -67,6 +68,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         tankWindChargeFix = new TankWindChargeFix(this);
         lifestealerConversion = new LifestealerConversion(this);
         compatibilityTrace = new CompatibilityTrace(this);
+        tntOwnerTracker = new TntOwnerTracker(this);
         swiftModifierKey = new NamespacedKey(this, "swift_speed_ii");
         Plugin vendor = Bukkit.getPluginManager().getPlugin("OutlawSMP");
         if (vendor == null || !vendor.isEnabled()) {
@@ -94,6 +96,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         Bukkit.getPluginManager().registerEvents(tankWindChargeFix, this);
         Bukkit.getPluginManager().registerEvents(lifestealerConversion, this);
         Bukkit.getPluginManager().registerEvents(compatibilityTrace, this);
+        Bukkit.getPluginManager().registerEvents(tntOwnerTracker, this);
         quickdrawBoost.start();
         blacksmithRecipes.reload();
         Objects.requireNonNull(getCommand("outlawexpansion")).setExecutor(this);
@@ -211,9 +214,9 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
             return;
         }
 
-        Entity source = tnt.getSource();
-        boolean selfIgnited = source instanceof Player
-                && source.getUniqueId().equals(event.getEntity().getUniqueId());
+        UUID originalIgniter = tntOwnerTracker.owner(tnt);
+        boolean selfIgnited = originalIgniter != null
+                && originalIgniter.equals(event.getEntity().getUniqueId());
 
         // The self-igniter factor is relative to vanilla, not multiplied by 1.25 first.
         double multiplier = selfIgnited
