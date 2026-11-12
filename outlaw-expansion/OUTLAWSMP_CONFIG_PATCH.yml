@@ -1,0 +1,47 @@
+# COPY ONLY THESE SETTINGS INTO plugins/OutlawSMP/config.yml.
+# This is a PARTIAL YAML PATCH, not a replacement for the whole file!
+# Back up the server and existing config first.
+perks:
+  toughness:
+    # Only do this once the companion Toughness handler is enabled:
+    damage-reduction: 0.0
+
+  blacksmith:
+    recipes:
+      cheap-gap:
+        result:
+          material: GOLDEN_APPLE
+          amount: 1
+        shape:
+          - " G "
+          - "GAG"
+          - " G "
+        ingredients:
+          G: GOLD_INGOT
+          A: APPLE
+      cobweb:
+        result:
+          material: COBWEB
+          amount: 2
+        shape:
+          - "W"
+        ingredients:
+          W: COBWEB
+      breeze-rod:
+        result:
+          material: BREEZE_ROD
+          amount: 1
+        shape:
+          - "NNN"
+          - "NSN"
+          - "NNN"
+        ingredients:
+          N: IRON_NUGGET
+          S: STICK
+
+  sharpshooter:
+    # Only do this once the companion Sharpshooter handler is enabled:
+    damage-bonus: 0.0
+
+# Leave quickdraw.quick-charge-level unchanged until we can test
+# whether zero disables the vendor's own enchantment management safely.
