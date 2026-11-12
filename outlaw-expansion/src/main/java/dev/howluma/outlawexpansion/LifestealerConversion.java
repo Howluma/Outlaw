@@ -47,12 +47,12 @@ public final class LifestealerConversion implements Listener {
             double effective = event.getFinalDamage();
             if (!Double.isFinite(effective) || effective <= 0) return;
             double after = target.isDead() ? 0.0 : target.getHealth();
-            double lost = Math.min(effective, Math.max(0.0, hit.beforeHealth - after));
-            if (lost <= 0 || attacker.isDead() || !attacker.isOnline()) return;
-
-            // Never exceed actual HP damage or the attacker's missing health.
-            attacker.setHealth(Math.min(attacker.getMaxHealth(),
-                    attacker.getHealth() + lost));
+            if (attacker.isDead() || !attacker.isOnline()) return;
+            double max = attacker.getMaxHealth();
+            double heal = MechanicRules.lifestealHeal(hit.beforeHealth, after,
+                    effective, attacker.getHealth(), max);
+            if (heal <= 0) return;
+            attacker.setHealth(Math.min(max, attacker.getHealth() + heal));
         });
     }
 
