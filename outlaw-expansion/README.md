@@ -12,7 +12,7 @@ Paper's damage API exposes damage sources and primed TNT source attribution. The
 
 ## What this test build does
 
-- TNT explosion damage: 1.25x raw damage to entities other than the original igniter; 0.50x raw damage to the player who directly ignited TNT, where TNTPrimed.getSource() identifies that player.
+- TNT explosion damage: 1.25x raw damage to entities other than the original igniter; 0.50x raw damage to the original igniter. The addon tracks a player/projectile/TNT priming source through block-TNT chains using temporary UUID tags where Paper exposes enough information. TNT primed only by fire, redstone or dispensers can remain unattributed; those use the normal 1.25x multiplier. The current scaling is of the raw explosion damage, so final damage after armor is not guaranteed to be an exact ratio.
 - Optional Toughness: multiply raw incoming damage for players carrying Toughness by 0.975. **Off by default** because the original 95% non-player reduction must be disabled in the vendor's config first.
 - Optional Sharpshooter: increase crossbow-shot projectile velocity; initial configurable multiplier 1.25. **Off by default** until the original 50% crossbow bonus is disabled.
 - Optional Swift prototype: intercept a 10-second, plugin-applied Speed II effect while Swift is selected, replace it with a temporary +40% movement speed attribute modifier, and clean up on expiry, death, logout, and plugin shutdown. **Off by default** until live event-order tests succeed. Haste II is untouched.
@@ -67,16 +67,17 @@ The addon can temporarily add +1 Quick Charge to a held crossbow, including leve
 
 **Disabled by default.** Both `perks.quickdraw.enabled: true` and `perks.quickdraw.vendor-fixed-level-disabled-confirmed: true` must be set. First test that changing the vendor's `quick-charge-level` to zero actually disables its fixed-enchant loop; otherwise vendor and addon may fight each other.
 
-### Experimental Lifestealer + Tank
+### Experimental Lifestealer, Degenerate, and Tank
 
 - `skills.lifestealer.convert-regeneration: true`: intercept vendor-like 60-tick Regeneration I gained directly during a Lifestealer hit and replace it with immediate healing equal to the target's *actual health lost* (capped by final damage after mitigation and caster missing health). If the vendor applies Regen through a delayed task, this event-based prototype may miss it.
 - `skills.tank.wind-charge-knockback-fix: true`: attempt to un-cancel a wind-charge knockback event for a player equipped with Tank. Does not yet cover every possible explosion-velocity path and may require further work if the vendor resets velocity later.
+- `skills.degenerate.restore-instant-health-potions: true`: if the original plugin cancels a `MAGIC` healing event immediately after an actual Instant Health splash or drink, un-cancel that particular potion heal. This does not broadly disable Degenerate and does not modify other regeneration. The event order must be verified in-game.
 
 **These are off by default and must be tested one at a time on a staging server.** The original vendor effects are not known to support a formal callback.
 
 ### Inspect exactly what the original vendor does
 
-As an operator in-game, run `/outlawexpansion trace start`. You have 60 seconds (max 120 records) to reproduce a Tank wind-charge throw, a Degenerate Instant Health splash, or a Lifestealer hit. The companion logs the event type/cause/cancellation state to the server console; it does **not** log player names or UUIDs. `/outlawexpansion trace stop` ends the capture early. Share only the sanitized trace lines to investigate compatibility.
+As an operator in-game, run `/outlawexpansion trace start`. You have 60 seconds (max 120 records) to reproduce a Tank wind-charge throw, a Degenerate Instant Health splash, or a Lifestealer hit. The companion logs the event type/cause/cancellation state and observed shop/NPC interactions to the server console; it does **not** log player names or UUIDs. `/outlawexpansion trace stop` ends the capture early. Share only the sanitized trace lines to investigate compatibility.
 
 ### Automated regression checks
 
@@ -88,7 +89,7 @@ Four JUnit tests now cover cooldown persistence arithmetic/clock rollback, Quick
 - Making the original sheriff NPC count and pay out unique verified heads across sessions.
 - Dropping a banknote redeemable through the **existing** money balance without a transaction-safe economy API.
 - Activating Quickdraw safely without testing whether the original plugin can disable its fixed-level enchantment updater. The addon prototype is off by default.
-- Degenerate's Instant Health potion exception still requires an observed in-game heal-cancellation path. Tank, Lifestealer and Swift have disabled compatibility prototypes, not verified drop-in fixes.
+- Tank, Degenerate, Lifestealer and Swift have disabled compatibility prototypes, not verified drop-in fixes. Degenerate's healing override requires a matching cancelled MAGIC heal event; it may need a different hook if the vendor suppresses the potion earlier.
 
 These are still part of the requested work. Do not confuse an addon-created *second* bounty economy with the existing one.
 
