@@ -52,6 +52,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
     private LifestealerConversion lifestealerConversion;
     private CompatibilityTrace compatibilityTrace;
     private TntOwnerTracker tntOwnerTracker;
+    private DegenerateInstantHealFix degenerateInstantHealFix;
     private NamespacedKey swiftModifierKey;
     private final Map<UUID, Integer> swiftGenerations = new HashMap<>();
     private int swiftGeneration;
@@ -69,6 +70,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         lifestealerConversion = new LifestealerConversion(this);
         compatibilityTrace = new CompatibilityTrace(this);
         tntOwnerTracker = new TntOwnerTracker(this);
+        degenerateInstantHealFix = new DegenerateInstantHealFix(this);
         swiftModifierKey = new NamespacedKey(this, "swift_speed_ii");
         Plugin vendor = Bukkit.getPluginManager().getPlugin("OutlawSMP");
         if (vendor == null || !vendor.isEnabled()) {
@@ -97,6 +99,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         Bukkit.getPluginManager().registerEvents(lifestealerConversion, this);
         Bukkit.getPluginManager().registerEvents(compatibilityTrace, this);
         Bukkit.getPluginManager().registerEvents(tntOwnerTracker, this);
+        Bukkit.getPluginManager().registerEvents(degenerateInstantHealFix, this);
         quickdrawBoost.start();
         blacksmithRecipes.reload();
         Objects.requireNonNull(getCommand("outlawexpansion")).setExecutor(this);
@@ -379,6 +382,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
             sender.sendMessage("Quickdraw boost: " + getConfig().getBoolean("perks.quickdraw.enabled", false));
             sender.sendMessage("Tank wind charge fix: " + getConfig().getBoolean("skills.tank.wind-charge-knockback-fix", false));
             sender.sendMessage("Lifestealer health conversion: " + getConfig().getBoolean("skills.lifestealer.convert-regeneration", false));
+            sender.sendMessage("Degenerate instant heal compatibility: " + getConfig().getBoolean("skills.degenerate.restore-instant-health-potions", false));
             sender.sendMessage("Draft catalog entries: " + catalog.count("skills") + " skills, "
                     + catalog.count("perks") + " perks (preview only)");
             if (sender instanceof Player player) {
