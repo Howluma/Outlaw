@@ -1,0 +1,18 @@
+name: Outlaw JAR class inventory
+on:
+  push:
+    branches: [feature/outlaw-smp-improvements]
+  workflow_dispatch:
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show plugin classes and configuration
+        run: |
+          echo '=== JAR CLASSES ==='
+          jar tf OutlawSMP.jar | grep -E '\\.class$' | head -250
+          echo '=== CONFIG ==='
+          unzip -p OutlawSMP.jar config.yml | head -280
+          echo '=== BUNDLED RESOURCES ==='
+          jar tf OutlawSMP.jar | grep -v '\\.class$' | head -150
