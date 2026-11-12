@@ -8,7 +8,7 @@ softdepend: [OutlawSMP, PlaceholderAPI]
 commands:
   outlawexpansion:
     description: Diagnostic, catalog preview, and shop inspection commands
-    usage: /outlawexpansion <status|reload|catalog [skill|perk] [id]|preview skills|perks|inspect on|off>
+    usage: /outlawexpansion <status|reload|catalog [skill|perk] [id]|preview skills|perks|inspect on|off|trace start|stop>
     permission: outlawexpansion.admin
 permissions:
   outlawexpansion.admin:
