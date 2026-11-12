@@ -46,6 +46,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
     private CatalogPreview preview;
     private ShopInspector inspector;
     private BlacksmithRecipeManager blacksmithRecipes;
+    private HeadFarmGuard headFarmGuard;
     private NamespacedKey swiftModifierKey;
     private final Map<UUID, Integer> swiftGenerations = new HashMap<>();
     private int swiftGeneration;
@@ -57,6 +58,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         preview = new CatalogPreview(catalog);
         inspector = new ShopInspector(this);
         blacksmithRecipes = new BlacksmithRecipeManager(this);
+        headFarmGuard = new HeadFarmGuard(this);
         swiftModifierKey = new NamespacedKey(this, "swift_speed_ii");
         Plugin vendor = Bukkit.getPluginManager().getPlugin("OutlawSMP");
         if (vendor == null || !vendor.isEnabled()) {
@@ -79,6 +81,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         Bukkit.getPluginManager().registerEvents(inspector, this);
         Bukkit.getPluginManager().registerEvents(preview, this);
         Bukkit.getPluginManager().registerEvents(blacksmithRecipes, this);
+        Bukkit.getPluginManager().registerEvents(headFarmGuard, this);
         blacksmithRecipes.reload();
         Objects.requireNonNull(getCommand("outlawexpansion")).setExecutor(this);
     }
@@ -86,6 +89,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
     @Override
     public void onDisable() {
         if (blacksmithRecipes != null) blacksmithRecipes.unregister();
+        if (headFarmGuard != null) headFarmGuard.shutdown();
         for (Player player : Bukkit.getOnlinePlayers()) {
             removeSwiftModifier(player);
         }
@@ -332,6 +336,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
             sender.sendMessage("Sharpshooter addon: " + getConfig().getBoolean("perks.sharpshooter.enabled", false));
             sender.sendMessage("Swift attribute addon: " + getConfig().getBoolean("skills.swift.enabled", false));
             sender.sendMessage("Blacksmith addon recipes: " + getConfig().getBoolean("perks.blacksmith.new-recipes-enabled", false));
+            sender.sendMessage("Head farming guard: " + getConfig().getBoolean("heads.anti-farm.enabled", true));
             sender.sendMessage("Draft catalog entries: " + catalog.count("skills") + " skills, "
                     + catalog.count("perks") + " perks (preview only)");
             if (sender instanceof Player player) {
