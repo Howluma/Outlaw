@@ -65,8 +65,8 @@ public final class HeadFarmGuard implements Listener {
         Pair key = new Pair(killerId, victimId);
         long now = System.currentTimeMillis();
 
-        boolean pairBlocked = withinCooldown(now, killerVictim.get(key), pairCooldown());
-        boolean victimBlocked = withinCooldown(now, victimLast.get(victimId), victimCooldown());
+        boolean pairBlocked = MechanicRules.withinCooldown(now, killerVictim.get(key), pairCooldown());
+        boolean victimBlocked = MechanicRules.withinCooldown(now, victimLast.get(victimId), victimCooldown());
         boolean denied = pairBlocked || victimBlocked;
 
         if (!denied) {
@@ -78,10 +78,6 @@ public final class HeadFarmGuard implements Listener {
         pending.put(victimId, new PendingDeath(victim.getLocation().clone(), now, denied));
         // Monitor only the immediate death-spawn window. No long-lived world scan.
         Bukkit.getScheduler().runTaskLater(plugin, () -> pending.remove(victimId), 5L);
-    }
-
-    private boolean withinCooldown(long now, Long last, long cooldown) {
-        return last != null && cooldown > 0 && last <= now && now - last < cooldown;
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
@@ -152,7 +148,7 @@ public final class HeadFarmGuard implements Listener {
     private void save() {
         long now = System.currentTimeMillis();
         long retain = Math.max(pairCooldown(), victimCooldown()) + 86_400_000L;
-        killerVictim.entrySet().removeIf(e -> e.getValue() > now || now - e.getValue() > retain);
+        killerVictim.entrySet().removeIf(e -> e.getValue() < now && now - e.getValue() > retain);
         victimLast.entrySet().removeIf(e -> e.getValue() > now || now - e.getValue() > retain);
 
         YamlConfiguration yaml = new YamlConfiguration();
