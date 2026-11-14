@@ -1,0 +1,32 @@
+name: Build OutlawExpansion test plugin
+on:
+  push:
+    paths:
+      - "outlaw-expansion/**"
+      - ".github/workflows/outlaw-expansion-build.yml"
+  pull_request:
+    paths:
+      - "outlaw-expansion/**"
+      - ".github/workflows/outlaw-expansion-build.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+          cache-dependency-path: outlaw-expansion/pom.xml
+      - name: Compile against Paper 1.21.11
+        run: mvn -B -ntp -f outlaw-expansion/pom.xml clean verify
+      - name: Upload test JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: OutlawExpansion-test-JAR
+          path: outlaw-expansion/target/*.jar
+          if-no-files-found: error

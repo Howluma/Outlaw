@@ -1,0 +1,16 @@
+name: OutlawExpansion
+version: '0.1.1-test'
+main: dev.howluma.outlawexpansion.OutlawExpansionPlugin
+api-version: '1.21'
+description: Opt-in companion for OutlawSMP with standalone combat adjustments
+author: Howluma
+softdepend: [OutlawSMP, PlaceholderAPI]
+commands:
+  outlawexpansion:
+    description: Diagnostic, catalog preview, and shop inspection commands
+    usage: /outlawexpansion <status|reload|catalog [skill|perk] [id]|preview skills|perks|inspect on|off|trace start|stop>
+    permission: outlawexpansion.admin
+permissions:
+  outlawexpansion.admin:
+    description: View integration status and reload test configuration
+    default: op

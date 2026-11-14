@@ -1,0 +1,229 @@
+# Easy-edit catalog for the TARGET version of OutlawSMP.
+# These prices/descriptions are NOT YET used by the vendor's shop.
+# planned-price: -1 means 'keep existing price until integrated'.
+# implementation indicates whether the effect is in vendor config, an addon prototype, or needs integration.
+# This file is SAFE to share; do not paste private player data or a vendor license key.
+catalog-version: 1
+currency-name: coins
+skills:
+  mirage:
+    display-name: "Mirage"
+    icon: "ENDER_PEARL"
+    planned-price: -1
+    implementation: "needs-verification"
+    lore:
+      - "Charge with 20 hits."
+      - "Targeted teleport range: up to 8 blocks."
+      - "Exact targeting behavior needs test confirmation."
+  degenerate:
+    display-name: "Degenerate"
+    icon: "FERMENTED_SPIDER_EYE"
+    planned-price: -1
+    implementation: "needs-integration"
+    lore:
+      - "Charge with 40 hits."
+      - "Afflict enemies for 10 seconds."
+      - "Instant Health potions still heal affected players."
+  swift:
+    display-name: "Swift"
+    icon: "SUGAR"
+    planned-price: -1
+    implementation: "prototype-disabled"
+    lore:
+      - "Charge with 30 hits."
+      - "For 10 seconds, gain Speed II-equivalent movement via an attribute."
+      - "Keep Haste II during the ability."
+  fatigue:
+    display-name: "Fatigue"
+    icon: "COBWEB"
+    planned-price: -1
+    implementation: "needs-verification"
+    lore:
+      - "Charge with 40 hits."
+      - "Inflict Mining Fatigue I and Slowness II for 10 seconds."
+  tank:
+    display-name: "Tank"
+    icon: "SHIELD"
+    planned-price: -1
+    implementation: "needs-integration"
+    lore:
+      - "Charge with 30 hits."
+      - "Gain Resistance II for 8 seconds."
+      - "Wind charges still affect your movement."
+  venom:
+    display-name: "Venom"
+    icon: "SPIDER_EYE"
+    planned-price: -1
+    implementation: "needs-verification"
+    lore:
+      - "Charge with 50 hits."
+      - "Poison targets for 15 seconds."
+  inferno:
+    display-name: "Inferno"
+    icon: "FIRE_CHARGE"
+    planned-price: -1
+    implementation: "needs-verification"
+    lore:
+      - "Charge with 30 hits."
+      - "Fire-related effect duration: 12 seconds."
+      - "Exact behavior needs test confirmation."
+  shockwave:
+    display-name: "Shockwave"
+    icon: "WIND_CHARGE"
+    planned-price: -1
+    implementation: "needs-verification"
+    lore:
+      - "Charge with 30 hits."
+      - "Launch nearby enemies within 5 blocks."
+      - "Base damage: 6; launch power: 2."
+  frostbite:
+    display-name: "Frostbite"
+    icon: "BLUE_ICE"
+    planned-price: -1
+    implementation: "needs-verification"
+    lore:
+      - "Charge with 40 hits."
+      - "Freeze affected targets for 3 seconds."
+  breach:
+    display-name: "Breach"
+    icon: "IRON_AXE"
+    planned-price: -1
+    implementation: "needs-verification"
+    lore:
+      - "Charge with 50 hits."
+      - "Armor piercing lasts 15 seconds."
+      - "Existing config factor: 0.5; exact effect needs confirmation."
+  lifestealer:
+    display-name: "Lifestealer"
+    icon: "GLISTERING_MELON_SLICE"
+    planned-price: -1
+    implementation: "needs-integration"
+    lore:
+      - "Charge with 40 hits."
+      - "For 10 seconds heal equal to actual enemy health lost after mitigation."
+      - "Never grants Regeneration."
+  wager:
+    display-name: "Wager"
+    icon: "GOLD_NUGGET"
+    planned-price: -1
+    implementation: "needs-verification"
+    lore:
+      - "Charge with 40 hits."
+      - "Duration randomly varies from 10 to 20 seconds."
+      - "Original config lists Haste V and +1.5 attack damage."
+  hypnosis:
+    display-name: "Hypnosis"
+    icon: "ENCHANTED_BOOK"
+    planned-price: -1
+    implementation: "needs-verification"
+    lore:
+      - "Charge with 40 hits."
+      - "Duration: 10 seconds."
+      - "Exact hypnosis behavior needs test confirmation."
+perks:
+  toughness:
+    display-name: "Toughness"
+    icon: "NETHERITE_CHESTPLATE"
+    tier: 1
+    planned-price: -1
+    implementation: "prototype-disabled"
+    lore:
+      - "Take 2.5% less damage from all sources."
+      - "Replaces original non-player-only mitigation."
+  blacksmith:
+    display-name: "Blacksmith"
+    icon: "SMITHING_TABLE"
+    tier: 1
+    planned-price: -1
+    implementation: "config-patch"
+    lore:
+      - "Craft golden apples from an apple and four gold ingots."
+      - "Duplicate one cobweb into two cobwebs."
+      - "Craft breeze rods from a stick and eight iron nuggets."
+  discount:
+    display-name: "Discount"
+    icon: "EMERALD"
+    tier: 1
+    planned-price: -1
+    implementation: "vendor-config"
+    lore:
+      - "Pay 20% of normal villager trade costs."
+      - "Earn 50% more XP from supported sources."
+  efficiency:
+    display-name: "Efficiency"
+    icon: "GOLDEN_PICKAXE"
+    tier: 1
+    planned-price: -1
+    implementation: "vendor-config"
+    lore:
+      - "Gain Haste I while equipped."
+  shield:
+    display-name: "Shield"
+    icon: "SHIELD"
+    tier: 2
+    planned-price: -1
+    implementation: "vendor-config"
+    lore:
+      - "Reduce shield cooldown by 50%."
+      - "One-third chance for blocked hits to cost no shield durability."
+  regenerate:
+    display-name: "Regenerate"
+    icon: "GHAST_TEAR"
+    tier: 2
+    planned-price: -1
+    implementation: "vendor-config"
+    lore:
+      - "Gain Regeneration I while equipped."
+  sharpshooter:
+    display-name: "Sharpshooter"
+    icon: "CROSSBOW"
+    tier: 2
+    planned-price: -1
+    implementation: "prototype-disabled"
+    lore:
+      - "Fire crossbow projectiles at increased speed."
+      - "Test multiplier: 1.25x velocity, adjustable in config."
+      - "No bonus projectile damage."
+  quickdraw:
+    display-name: "Quickdraw"
+    icon: "CROSSBOW"
+    tier: 2
+    planned-price: -1
+    implementation: "needs-integration"
+    lore:
+      - "Held crossbows gain exactly +1 Quick Charge."
+      - "No enchantment becomes I; III becomes IV."
+      - "Does not permanently enchant crossbows."
+  swordmaster:
+    display-name: "Swordmaster"
+    icon: "DIAMOND_SWORD"
+    tier: 3
+    planned-price: -1
+    implementation: "vendor-config"
+    lore:
+      - "Deal 25% more damage on sprint and sweep attacks."
+  momentum:
+    display-name: "Momentum"
+    icon: "REDSTONE"
+    tier: 3
+    planned-price: -1
+    implementation: "vendor-config"
+    lore:
+      - "Consecutive hits build damage up to 1.4x."
+      - "Momentum resets after five seconds without a hit."
+  adrenaline:
+    display-name: "Adrenaline"
+    icon: "NETHER_WART"
+    tier: 3
+    planned-price: -1
+    implementation: "vendor-config"
+    lore:
+      - "Deal 50% more damage while below six hearts."
+  counter:
+    display-name: "Counter"
+    icon: "CLOCK"
+    tier: 3
+    planned-price: -1
+    implementation: "vendor-config"
+    lore:
+      - "Charge abilities 30% faster."
