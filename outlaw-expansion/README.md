@@ -10,9 +10,25 @@ OutlawSMP v1.3's official BuiltByBit listing documents these PlaceholderAPI plac
 
 Paper's damage API exposes damage sources and primed TNT source attribution. The original JAR only supplies obfuscated compiled code, not a rebuildable Java project.
 
+## TNT self-damage adjustment (0.1.1-test)
+
+The original 0.50x self multiplier caused TNT detonated directly at the
+igniter's feet to deal as little as one heart with strong armor/protection.
+The new **default is 1.00x raw damage to the igniter**, versus 1.25x for
+other players and mobs. This retains normal distance scaling and Minecraft
+armor/protection. It does not force a fixed number of hearts, and other
+plugins may independently modify explosion damage.
+
+**IMPORTANT for existing installations:** the plugin does not overwrite
+`plugins/OutlawExpansion/config.yml`. Change
+`tnt.igniter-damage-multiplier: 0.50` to `1.00`, save, and run
+`/outlawexpansion reload` (or restart). The plugin logs a warning if the
+old 0.50 value is still active. Run `/outlawexpansion status` to see the
+current other/igniter multipliers.
+
 ## What this test build does
 
-- TNT explosion damage: 1.25x raw damage to entities other than the original igniter; 0.50x raw damage to the original igniter. The addon tracks a player/projectile/TNT priming source through block-TNT chains using temporary UUID tags where Paper exposes enough information. TNT primed only by fire, redstone or dispensers can remain unattributed; those use the normal 1.25x multiplier. The current scaling is of the raw explosion damage, so final damage after armor is not guaranteed to be an exact ratio.
+- TNT explosion damage: 1.25x raw damage to entities other than the original igniter; 1.00x raw damage to the original igniter (increased from 0.50x after direct-blast testing). The addon tracks a player/projectile/TNT priming source through block-TNT chains using temporary UUID tags where Paper exposes enough information. TNT primed only by fire, redstone or dispensers can remain unattributed; those use the normal 1.25x multiplier. The current scaling is of the raw explosion damage, so final damage after armor is not guaranteed to be an exact ratio.
 - Optional Toughness: multiply raw incoming damage for players carrying Toughness by 0.975. **Off by default** because the original 95% non-player reduction must be disabled in the vendor's config first.
 - Optional Sharpshooter: increase crossbow-shot projectile velocity; initial configurable multiplier 1.25. **Off by default** until the original 50% crossbow bonus is disabled.
 - Optional Swift prototype: intercept a 10-second, plugin-applied Speed II effect while Swift is selected, replace it with a temporary +40% movement speed attribute modifier, and clean up on expiry, death, logout, and plugin shutdown. **Off by default** until live event-order tests succeed. Haste II is untouched.
@@ -104,7 +120,7 @@ GitHub Actions packages the JAR as a downloadable build artifact for test server
 1. Back up your server, its world, and plugins/OutlawSMP directory.
 2. Install the original OutlawSMP, PlaceholderAPI, and this test plugin into plugins/.
 3. Start a Paper 1.21.11 test server, use /outlawexpansion status as OP.
-4. Test TNT with mobs, another player, and the player who ignited it. Chain-primed TNT may not expose an igniter, so do not assume the half-damage rule applies in that case.
+4. Test TNT with mobs, another player, and the player who ignited it. Chain-primed TNT may not expose an igniter, so do not assume the igniter-specific multiplier applies in that case.
 5. Read OUTLAWSMP_CONFIG_PATCH.yml. Copy only the relevant values into the original OutlawSMP config, preserving all unrelated keys. Restart to test Blacksmith recipes.
 6. Only after neutralizing the old Toughness/Sharpshooter effect, enable those features in plugins/OutlawExpansion/config.yml and reload.
 7. Test with and without armor and other protection enchantments: raw-damage scaling can differ from the effective post-armor ratio.

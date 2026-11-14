@@ -5,7 +5,11 @@ tnt:
   track-igniter-across-chains: true
   enabled: true
   other-damage-multiplier: 1.25
-  igniter-damage-multiplier: 0.50
+  # 1.00 = full unmodified raw TNT self-damage; 0.50 was too weak.
+  # Other players and mobs still receive the 1.25x multiplier above.
+  # Existing plugins/OutlawExpansion/config.yml files are NOT automatically
+  # overwritten by a new plugin JAR; update this value manually on upgrades.
+  igniter-damage-multiplier: 1.00
 
 perks:
   quickdraw:

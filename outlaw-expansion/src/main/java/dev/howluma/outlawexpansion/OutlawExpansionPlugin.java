@@ -60,6 +60,10 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
     @Override
     public void onEnable() {
         saveDefaultConfig();
+        // Existing server configs are deliberately not overwritten on upgrade.
+        // Warn about the legacy 0.50x value so administrators do not mistake
+        // their installed config for this build's stronger 1.00x default.
+        warnLegacyTntSelfDamage();
         catalog = new CatalogManager(this);
         preview = new CatalogPreview(catalog);
         inspector = new ShopInspector(this);
@@ -203,6 +207,17 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         }
     }
 
+    private void warnLegacyTntSelfDamage() {
+        if (!getConfig().getBoolean("tnt.enabled", true)) return;
+        double actual = getConfig().getDouble("tnt.igniter-damage-multiplier", 1.00);
+        if (Math.abs(actual - 0.50) < 1.0e-9) {
+            getLogger().warning("Legacy TNT self-damage multiplier 0.50 detected: "
+                    + "standing on your own TNT may deal very little damage. "
+                    + "Change plugins/OutlawExpansion/config.yml "
+                    + "tnt.igniter-damage-multiplier to 1.00 and run /outlawexpansion reload.");
+        }
+    }
+
     private void applyTntMultiplier(EntityDamageEvent event) {
         if (event.getCause() != EntityDamageEvent.DamageCause.BLOCK_EXPLOSION
                 && event.getCause() != EntityDamageEvent.DamageCause.ENTITY_EXPLOSION) {
@@ -221,15 +236,16 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
         boolean selfIgnited = originalIgniter != null
                 && originalIgniter.equals(event.getEntity().getUniqueId());
 
-        // The self-igniter factor is relative to vanilla, not multiplied by 1.25 first.
+        // The self-igniter factor is applied to the raw damage at this event stage.
+        // 1.00 means no extra self-reduction; it does not bypass armor/protection.
         double multiplier = selfIgnited
-                ? getConfig().getDouble("tnt.igniter-damage-multiplier", 0.50)
+                ? getConfig().getDouble("tnt.igniter-damage-multiplier", 1.00)
                 : getConfig().getDouble("tnt.other-damage-multiplier", 1.25);
 
         if (Double.isFinite(multiplier) && multiplier >= 0 && multiplier <= 10) {
             event.setDamage(MechanicRules.tntDamage(event.getDamage(),
                     getConfig().getDouble("tnt.other-damage-multiplier", 1.25),
-                    getConfig().getDouble("tnt.igniter-damage-multiplier", 0.50),
+                    getConfig().getDouble("tnt.igniter-damage-multiplier", 1.00),
                     selfIgnited));
         }
     }
@@ -288,6 +304,7 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 1 && args[0].equalsIgnoreCase("reload")) {
             reloadConfig();
+            warnLegacyTntSelfDamage();
             catalog.reload();
             blacksmithRecipes.reload();
             sender.sendMessage(ChatColor.GREEN + "OutlawExpansion config and draft catalog reloaded.");
@@ -373,7 +390,9 @@ public final class OutlawExpansionPlugin extends JavaPlugin implements Listener,
             sender.sendMessage("OutlawSMP: " + (original != null && original.isEnabled()
                     ? original.getPluginMeta().getVersion() : "not active"));
             sender.sendMessage("PlaceholderAPI: " + (placeholderMethod == null ? "unavailable" : "connected"));
-            sender.sendMessage("TNT scaling: " + getConfig().getBoolean("tnt.enabled", true));
+            sender.sendMessage("TNT scaling: " + getConfig().getBoolean("tnt.enabled", true)
+                    + " | other: " + getConfig().getDouble("tnt.other-damage-multiplier", 1.25)
+                    + "x | igniter: " + getConfig().getDouble("tnt.igniter-damage-multiplier", 1.00) + "x");
             sender.sendMessage("Toughness addon: " + getConfig().getBoolean("perks.toughness.enabled", false));
             sender.sendMessage("Sharpshooter addon: " + getConfig().getBoolean("perks.sharpshooter.enabled", false));
             sender.sendMessage("Swift attribute addon: " + getConfig().getBoolean("skills.swift.enabled", false));

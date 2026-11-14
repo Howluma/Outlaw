@@ -18,7 +18,7 @@
 | Sharpshooter increases crossbow velocity | Implemented **opt-in** | 1.25x test value configurable; original bonus damage must be neutralized |
 | Swift uses Speed II-equivalent attribute | Implemented **opt-in prototype** | Detects vendor 10-second Speed II plugin effect; Haste untouched |
 | Lifestealer converts post-mitigation damage into self-heal | Implemented **opt-in prototype** | Uses vendor 60-tick regen event as active-ability signal; event ordering needs test |
-| TNT 1.25x damage, igniter 0.5x | **Implemented — default on** | Scaling currently applies to raw event damage; tracks chain igniter if Paper provides a primer |
+| TNT 1.25x damage, igniter 1.00x (raised from 0.50x) | **Implemented — default on** | Scaling applies to raw event damage; tracks chain igniter when Paper provides a primer. Existing config.yml retains the old multiplier until manually updated |
 | Configurable perk/ability prices | **Preview only** | `catalog.yml` stores planned prices but does not change vendor shop purchase debits |
 | Accurate perk/ability descriptions | **Preview only** | Editable `catalog.yml`, 25 entries, `/outlawexpansion preview skills|perks`; vendor GUI not yet replaced |
 | Redesign lackluster abilities and perks | Proposed only | See `docs/IMPLEMENTATION_ROADMAP.md`, approve designs before reimplementing |

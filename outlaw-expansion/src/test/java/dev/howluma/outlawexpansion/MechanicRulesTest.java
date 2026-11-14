@@ -35,7 +35,9 @@ class MechanicRulesTest {
 
     @Test void tntMultipliersAreIndependent() {
         assertEquals(12.5, MechanicRules.tntDamage(10, 1.25, 0.5, false), 1e-9);
-        assertEquals(5, MechanicRules.tntDamage(10, 1.25, 0.5, true), 1e-9);
+        assertEquals(10, MechanicRules.tntDamage(10, 1.25, 1.0, true), 1e-9);
+        assertEquals(5, MechanicRules.tntDamage(10, 1.25, 0.5, true), 1e-9,
+                "legacy self damage remains configurable if explicitly requested");
         assertEquals(10, MechanicRules.tntDamage(10, 1.25, -1, true), 1e-9,
                 "invalid config must not turn TNT into an exploit");
     }
